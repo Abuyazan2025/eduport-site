@@ -307,29 +307,88 @@ Page content START -->
 			<!-- Main content (Video and Info) RIGHT START -->
 			<div class="col-xl-8 order-xl-2 order-1">
 				<div class="row g-4">
-					<!-- Title START -->
-					<div class="col-12">
-						<!-- Title with icon -->
-						<div class="d-flex align-items-center mb-2" style="gap: 1rem;">
-							<img src="assets/images/courses/4by3/riyadiyyat_800x450_letterbox.png" alt="رياضيات" style="width:56px; height:56px; object-fit:contain; background:#fff; padding:4px; border-radius:12px; box-shadow:0 2px 8px rgba(72,32,153,0.10); margin-left: 0.75rem;">
-							<h2 class="mb-0">كورس شرح دروس الرياضيات المتكامل</h2>
-						</div>
-						<p class="lead">نشرح لك المنهج خطوة بخطوة ونبسط لك أصعب الأفكار حتى تتفوق بدون تعقيد.</p>
-						<div class="row g-2 mb-4">
-  <div class="col-12 col-md-12">
-    <ul class="list-unstyled d-flex flex-wrap" style="gap:0.5rem 2rem;">
-      <li class="mb-2 d-flex align-items-center" style="min-width: 220px;"><i class="fas fa-check-circle text-success ms-2"></i>المنهج طبقا لمنهج وزارة التربية لعام 2025</li>
-      <li class="mb-2 d-flex align-items-center" style="min-width: 220px;"><i class="fas fa-check-circle text-success ms-2"></i>تواصل مباشر مع المدرس</li>
-      <li class="mb-2 d-flex align-items-center" style="min-width: 220px;"><i class="fas fa-check-circle text-success ms-2"></i>أمثلة محلولة وتطبيقات عملية لكل درس</li>
-      <li class="mb-2 d-flex align-items-center" style="min-width: 220px;"><i class="fas fa-check-circle text-success ms-2"></i>مراجعات واختبارات بعد كل وحدة</li>
-      <li class="mb-2 d-flex align-items-center" style="min-width: 220px;"><i class="fas fa-check-circle text-success ms-2"></i>دروس مُسجّلة ترجع لها بأي وقت</li>
-      <li class="mb-2 d-flex align-items-center" style="min-width: 220px;"><i class="fas fa-check-circle text-success ms-2"></i>مراجعات خاصة قبل اختبارات القصير</li>
-    </ul>
-  </div>
+					
 </div>
 					</div>
 					<!-- Title END -->
 
+					<!-- منطقة العنوان والمميزات START -->
+<style>
+.hero-card-math {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(72,32,153,0.10);
+  padding: 2.1rem 1.2rem 1.2rem 1.2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-card-math .decor-circle {
+  position: absolute;
+  top: -38px;
+  left: -38px;
+  width: 110px;
+  height: 110px;
+  background: linear-gradient(120deg, #ffb547 60%, #1ba39c 100%);
+  opacity: 0.13;
+  border-radius: 50%;
+  z-index: 1;
+}
+.hero-card-math .main-title {
+  color: var(--brand-purple);
+  font-weight: 900;
+  font-size: 1.45rem;
+  margin-bottom: 0.7rem;
+  position: relative;
+  z-index: 2;
+  text-align: right;
+}
+.hero-card-math .features-list {
+  margin-bottom: 0.2rem;
+  margin-top: 0.5rem;
+  z-index: 2;
+  position: relative;
+}
+.hero-card-math .features-list li {
+  font-size: 1.08rem;
+  color: #333;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+.hero-card-math .features-list i {
+  color: var(--brand-teal) !important;
+  font-size: 1.2rem;
+  background: #f6f8fb;
+  border-radius: 50%;
+  padding: 0.18rem 0.32rem;
+  margin-left: 0.2rem;
+}
+@media (max-width: 767.98px) {
+  .hero-card-math { padding: 1.2rem 0.7rem 0.7rem 0.7rem; }
+  .hero-card-math .main-title { font-size: 1.1rem; }
+  .hero-card-math .decor-circle { width: 70px; height: 70px; top: -22px; left: -22px; }
+}
+</style>
+<div class="hero-card-math mb-2">
+  <span class="decor-circle"></span>
+  <div class="main-title d-flex align-items-center mb-2" style="gap: 1rem;">
+    <img src="assets/images/courses/4by3/riyadiyyat_800x450_letterbox.png" alt="رياضيات" style="width:44px; height:44px; object-fit:contain; background:#fff; padding:3px; border-radius:12px; box-shadow:0 2px 8px rgba(72,32,153,0.10); margin-left: 0.7rem;">
+    كورس شرح دروس الرياضيات المتكامل
+  </div>
+  <ul class="features-list list-unstyled">
+    <li><i class="fas fa-check-circle"></i>المنهج طبقاً لمنهج وزارة التربية لعام 2025</li>
+    <li><i class="fas fa-check-circle"></i>تواصل مباشر مع المدرس</li>
+    <li><i class="fas fa-check-circle"></i>أمثلة محلولة وتطبيقات عملية لكل درس</li>
+    <li><i class="fas fa-check-circle"></i>مراجعات واختبارات بعد كل وحدة</li>
+    <li><i class="fas fa-check-circle"></i>دروس مُسجّلة ترجع لها بأي وقت</li>
+    <li><i class="fas fa-check-circle"></i>مراجعات خاصة قبل اختبارات القصير</li>
+  </ul>
+</div>
+<!-- منطقة العنوان والمميزات END -->
+<div class="mb-3"></div>
 					<!-- Video START -->
 					<div class="col-12 position-relative">
 						<div class="video-player rounded-3">
@@ -750,7 +809,7 @@ Footer END -->
   <button class="btn btn-main">
     <i class="fas fa-star"></i>
     اشترك الآن
-    <span class="price">295 ر.س</span>
+    <span class="price">295 د.ك</span>
   </button>
   <button class="btn btn-cart" title="أضف إلى السلة">
     <i class="fas fa-shopping-cart"></i>
