@@ -168,212 +168,92 @@ h2, h5, h4, .lead {
 @media (max-width: 767.98px) {
   .sidebar-action-buttons { display: none !important; }
 }
-</style>
-
-</head>
-
-<body>
-
-<!-- Header START -->
-<header class="navbar-light navbar-sticky">
-	<!-- Logo Nav START -->
-	<nav class="navbar navbar-expand-xl navbar-light bg-white shadow-sm">
-		<div class="container">
-			<!-- Logo -->
-			<a class="navbar-brand" href="index.html">
-				<img class="navbar-brand-item" src="assets/images/bg/3by4/private-4t-logo.png" alt="logo" style="height: 40px;">
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-				<ul class="navbar-nav align-items-center">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle px-3 fw-bold text-white" style="background:#482099; border-radius:2rem;" href="#" id="bookMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							احجز حصتك
-						</a>
-						<ul class="dropdown-menu text-end" aria-labelledby="bookMenu">
-							<li><a class="dropdown-item" href="#">في البيت</a></li>
-							<li><a class="dropdown-item" href="#">في المعهد</a></li>
-							<li><a class="dropdown-item" href="#">أونلاين</a></li>
-						</ul>
-					</li>
-					<li class="nav-item"><a class="nav-link px-3" href="#">تعرّف على مدرسينا</a></li>
-					<li class="nav-item"><a class="nav-link px-3" href="#">العروض والباقات</a></li>
-					<li class="nav-item"><a class="nav-link px-3" href="#">فيديوهات شرح</a></li>
-					<li class="nav-item"><a class="nav-link px-3" href="#">الرئيسية</a></li>
-					<!-- أيقونة السلة -->
-					<li class="nav-item">
-						<a class="nav-link px-2" href="#" title="سلة المشتريات">
-							<i class="bi bi-cart3" style="font-size:1.3rem;"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- Logo Nav END -->
-</header>
-<!-- Header END -->
-
-
-<!-- **************** MAIN CONTENT START **************** -->
-<main>
-
-<!-- =======================
-Page content START -->
-<section class="pt-3 pt-xl-5">
-	<div class="container" data-sticky-container>
-		<div class="row g-4">
-			<!-- Main content (Title, Features, Video, etc.) LEFT START -->
-			<div class="col-12 col-xl-8 order-xl-1 order-1">
-				<!-- منطقة العنوان والمميزات START -->
-<style>
-.hero-card-math {
-  background: #fff;
+/* --- Sticky Sidebar for Desktop --- */
+@media (min-width: 992px) {
+  .col-xl-4 {
+    min-height: 100vh;
+    background: #f9f6d9; /* مؤقتًا للتجربة */
+  }
+  .sticky-sidebar-box {
+    position: sticky;
+    top: 140px; /* زيادة المسافة حسب الهيدر */
+    z-index: 100;
+  }
+}
+/* أدوات التفوق */
+.excellence-tools-card {
   border-radius: 1.5rem;
-  box-shadow: 0 4px 24px rgba(72,32,153,0.10);
-  padding: 2.1rem 1.2rem 1.2rem 1.2rem;
+  box-shadow: 0 4px 24px rgba(72,32,153,0.08);
+  background: #f6f8fb;
+  border: 2px solid var(--brand-purple);
   margin-bottom: 1.2rem;
-  position: relative;
-  overflow: hidden;
+  padding: 1.1rem 0.7rem 1.1rem 0.7rem;
 }
-.hero-card-math .decor-circle {
-  position: absolute;
-  top: -38px;
-  left: -38px;
-  width: 110px;
-  height: 110px;
-  background: linear-gradient(120deg, #ffb547 60%, #1ba39c 100%);
-  opacity: 0.13;
-  border-radius: 50%;
-  z-index: 1;
-}
-.hero-card-math .main-title {
+.excellence-tools-title {
   color: var(--brand-purple);
   font-weight: 900;
-  font-size: 1.45rem;
-  margin-bottom: 0.7rem;
-  position: relative;
-  z-index: 2;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
   text-align: right;
+  margin-bottom: 0.7rem;
 }
-.hero-card-math .features-list {
-  margin-bottom: 0.2rem;
-  margin-top: 0.5rem;
-  z-index: 2;
-  position: relative;
+.excellence-tools-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.7rem;
+  overflow-x: auto;
+  margin-bottom: 0;
+  padding-right: 0;
+  justify-content: flex-start;
+  scrollbar-width: thin;
+  scrollbar-color: #482099 #f6f8fb;
 }
-.hero-card-math .features-list li {
-  font-size: 1.08rem;
-  color: #333;
-  margin-bottom: 0.35rem;
+.excellence-tools-list li {
+  list-style: none;
+  min-width: 170px;
+  max-width: 210px;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(27,163,156,0.09);
+  padding: 0.7rem 0.9rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.01rem;
+  color: var(--brand-purple);
+  transition: box-shadow 0.18s, background 0.18s;
+  border: 1.5px solid #f6f8fb;
+  white-space: nowrap;
 }
-.hero-card-math .features-list i {
-  color: var(--brand-teal) !important;
-  font-size: 1.2rem;
-  background: #f6f8fb;
-  border-radius: 50%;
-  padding: 0.18rem 0.32rem;
+.excellence-tools-list li:hover {
+  background: #f9f6d9;
+  box-shadow: 0 6px 24px rgba(72,32,153,0.13);
+  border-color: var(--brand-teal);
+}
+.excellence-tools-list .download-arrow {
+  font-size: 1.1rem;
+  color: var(--brand-teal);
+  margin-right: 0.5rem;
   margin-left: 0.2rem;
+  transition: color 0.18s;
+}
+.excellence-tools-list li:hover .download-arrow {
+  color: var(--brand-purple);
 }
 @media (max-width: 767.98px) {
-  .hero-card-math { padding: 1.2rem 0.7rem 0.7rem 0.7rem; }
-  .hero-card-math .main-title { font-size: 1.1rem; }
-  .hero-card-math .decor-circle { width: 70px; height: 70px; top: -22px; left: -22px; }
+  .excellence-tools-title { font-size: 1.05rem; }
+  .excellence-tools-list li { font-size: 0.95rem; min-width: 120px; max-width: 150px; padding: 0.5rem 0.6rem; }
+  .excellence-tools-card { padding: 0.7rem 0.3rem 0.7rem 0.3rem; }
 }
-</style>
-<div class="hero-card-math mb-2">
-  <span class="decor-circle"></span>
-  <div class="main-title d-flex align-items-center mb-2" style="gap: 1rem;">
-    <img src="assets/images/courses/4by3/riyadiyyat_800x450_letterbox.png" alt="رياضيات" style="width:44px; height:44px; object-fit:contain; background:#fff; padding:3px; border-radius:12px; box-shadow:0 2px 8px rgba(72,32,153,0.10); margin-left: 0.7rem;">
-    كورس شرح دروس الرياضيات المتكامل
-  </div>
-  <ul class="features-list list-unstyled">
-    <li><i class="fas fa-check-circle"></i>المنهج طبقاً لمنهج وزارة التربية لعام 2025</li>
-    <li><i class="fas fa-check-circle"></i>تواصل مباشر مع المدرس</li>
-    <li><i class="fas fa-check-circle"></i>أمثلة محلولة وتطبيقات عملية لكل درس</li>
-    <li><i class="fas fa-check-circle"></i>مراجعات واختبارات بعد كل وحدة</li>
-    <li><i class="fas fa-check-circle"></i>دروس مُسجّلة ترجع لها بأي وقت</li>
-    <li><i class="fas fa-check-circle"></i>مراجعات خاصة قبل اختبارات القصير</li>
-  </ul>
-</div>
-<!-- منطقة العنوان والمميزات END -->
-<div class="mb-3"></div>
-					<!-- Video START -->
-					<div class="video-player rounded-3 mb-4">
-						<video controls crossorigin="anonymous" playsinline poster="assets/images/videos/poster.jpg">
-							<source src="assets/images/videos/360p.mp4" type="video/mp4" size="360">
-							<source src="assets/images/videos/720p.mp4" type="video/mp4" size="720">
-							<source src="assets/images/videos/1080p.mp4" type="video/mp4" size="1080">
-							<!-- Caption files -->
-							<track kind="captions" label="Arabic" srclang="ar" src="assets/images/videos/ar.vtt" default>
-						</video>
-					</div>
-					<!-- Video END -->
 
-					<!-- About course START -->
-					<div class="card border mb-4">
-						<!-- Card header START -->
-						<div class="card-header border-bottom">
-							<h3 class="mb-0">وصف الكورس</h3>
-						</div>
-						<!-- Card header END -->
-		
-						<!-- Card body START -->
-						<div class="card-body">
-							<p class="mb-3">مرحباً بك في <strong>كورس الرياضيات المتكامل للمرحلة الثانوية</strong> حيث نشرح لك المنهج خطوة بخطوة ونبسط لك أصعب الأفكار حتى تتفوق بدون تعقيد.</p>
-							<p class="mb-3">سوف تتعلم في هذا الكورس جميع دروس المنهج مع تطبيقات عملية، مراجعات واختبارات، بالإضافة إلى تواصل مباشر مع المدرس للإجابة على جميع استفساراتك.</p>
-							<p class="mb-0">هدفنا أن نساعدك على فهم الرياضيات بطريقة سهلة وعملية، ونوفر لك كل الأدوات التي تحتاجها لتحقيق أعلى الدرجات.</p>
-							<!-- Collapse body -->
-							<div class="collapse" id="collapseContent">
-								<p class="my-3">يشمل الكورس شروحات بالفيديو، مذكرات مراجعة، اختبارات قصيرة بعد كل وحدة، ومراجعات نهائية قبل الامتحانات. كما يمكنك حضور حصة لايف أسبوعية مع المدرس وطرح جميع أسئلتك.</p>
-								<p class="mb-0">كل الدروس متاحة لك في أي وقت ويمكنك الرجوع إليها متى احتجت، مع دعم فني وتعليمي مستمر طوال فترة الكورس.</p>
-							</div>
-							<!-- Collapse button -->
-							<a class="p-0 mb-0 mt-2 btn-more d-flex align-items-center" data-bs-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">
-								<span class="see-more ms-1">عرض المزيد</span><span class="see-less ms-1">عرض أقل</span><i class="fas fa-angle-down ms-2"></i>
-							</a>
-	
-							<!-- List content -->
-							<h5 class="mt-4">ماذا ستتعلم في هذا الكورس؟</h5>
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<ul class="list-group list-group-borderless">
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>شرح جميع دروس المنهج بالتفصيل</li>
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>حل أمثلة الكتاب والتدريبات العملية</li>
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>مراجعات واختبارات قصيرة بعد كل وحدة</li>
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>مراجعات نهائية قبل الامتحان</li>
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>مذكرات شرح ومراجعة شاملة</li>
-									</ul>
-								</div>
-								<div class="col-md-6">
-									<ul class="list-group list-group-borderless">
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>دروس مُسجّلة متاحة في أي وقت</li>
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>تواصل مباشر مع المدرس للإجابة على الأسئلة</li>
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>حصة لايف أسبوعية مع المدرس</li>
-										<li class="list-group-item h6 fw-light d-flex mb-0"><i class="fas fa-check-circle text-success me-2"></i>دعم فني وتعليمي مستمر</li>
-									</ul>
-								</div>
-							</div>
-							<p class="mb-0">انضم الآن وابدأ رحلتك نحو التفوق في الرياضيات!</p>
-						</div>
-						<!-- Card body END -->
-					</div>
-					<!-- About course END -->
-
-					<!-- =======================
-					محتويات الكورس (Curriculum) START -->
-<style>
+/* محتويات الكورس */
 .course-curriculum-card {
   border-radius: 1.5rem;
   box-shadow: 0 4px 24px rgba(72,32,153,0.08);
   background: #f6f8fb;
   border: 2px solid var(--brand-purple);
+  margin-bottom: 2.2rem;
 }
 .course-curriculum-title {
   color: var(--brand-purple);
@@ -382,6 +262,13 @@ Page content START -->
   letter-spacing: 1px;
   text-align: right;
   margin-bottom: 1.2rem;
+}
+.accordion-item {
+  background: #fff;
+  border-radius: 1.2rem;
+  margin-bottom: 1rem;
+  border: none;
+  box-shadow: 0 2px 12px rgba(72,32,153,0.06);
 }
 .accordion-button {
   font-size: 1.15rem;
@@ -395,7 +282,7 @@ Page content START -->
   position: relative;
 }
 .accordion-button::after {
-  content: '\002B'; /* علامة + */
+  content: '\002B';
   font-size: 1.5rem;
   color: var(--brand-teal);
   position: absolute;
@@ -405,16 +292,9 @@ Page content START -->
   transition: transform 0.3s;
 }
 .accordion-button:not(.collapsed)::after {
-  content: '\2212'; /* علامة - */
+  content: '\2212';
   transform: translateY(-50%) rotate(180deg);
   color: var(--brand-purple);
-}
-.accordion-item {
-  background: #fff;
-  border-radius: 1.2rem;
-  margin-bottom: 1rem;
-  border: none;
-  box-shadow: 0 2px 12px rgba(72,32,153,0.06);
 }
 .accordion-body ul {
   margin-bottom: 0;
@@ -436,282 +316,105 @@ Page content START -->
   font-size: 1.2rem;
 }
 @media (max-width: 767.98px) {
-  .course-curriculum-title { font-size: 1.3rem; }
+  .excellence-tools-title, .course-curriculum-title { font-size: 1.2rem; }
+  .excellence-tools-list li { font-size: 1rem; padding: 0.7rem 0.7rem; min-width: 120px;}
   .accordion-button { font-size: 1rem; }
 }
-</style>
-<div class="card my-4 course-curriculum-card">
-  <div class="card-header border-bottom px-4 py-3 bg-white" style="border-radius:1.2rem 1.2rem 0 0;">
-    <h3 class="mb-0 course-curriculum-title">محتويات الكورس</h3>
-  </div>
-  <div class="card-body p-4">
-    <div class="accordion accordion-icon accordion-bg-light" id="accordionMathCurriculum">
-      <!-- الوحدة 1 -->
-      <div class="accordion-item">
-        <h6 class="accordion-header font-base" id="heading-1">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
-            الجبر: المفاهيم الأساسية <span class="small ms-2">(3 دروس)</span>
-          </button>
-        </h6>
-        <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#accordionMathCurriculum">
-          <div class="accordion-body mt-3">
-            <ul class="list-unstyled mb-0">
-              <li><i class="fas fa-play-circle"></i>مقدمة في الجبر</li>
-              <li><i class="fas fa-play-circle"></i>المتغيرات والتعابير الجبرية</li>
-              <li><i class="fas fa-play-circle"></i>المعادلات البسيطة</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- الوحدة 2 -->
-      <div class="accordion-item">
-        <h6 class="accordion-header font-base" id="heading-2">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
-            المعادلات الخطية والمتباينات <span class="small ms-2">(4 دروس)</span>
-          </button>
-        </h6>
-        <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionMathCurriculum">
-          <div class="accordion-body mt-3">
-            <ul class="list-unstyled mb-0">
-              <li><i class="fas fa-play-circle"></i>حل المعادلات الخطية ذات المجهول الواحد</li>
-              <li><i class="fas fa-play-circle"></i>المعادلات ذات المجهولين</li>
-              <li><i class="fas fa-play-circle"></i>المتباينات الخطية</li>
-              <li><i class="fas fa-play-circle"></i>تطبيقات حياتية على المعادلات</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- الوحدة 3 -->
-      <div class="accordion-item">
-        <h6 class="accordion-header font-base" id="heading-3">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-            الدوال والمتتابعات <span class="small ms-2">(3 دروس)</span>
-          </button>
-        </h6>
-        <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#accordionMathCurriculum">
-          <div class="accordion-body mt-3">
-            <ul class="list-unstyled mb-0">
-              <li><i class="fas fa-play-circle"></i>مفهوم الدالة</li>
-              <li><i class="fas fa-play-circle"></i>تمثيل الدوال بيانياً</li>
-              <li><i class="fas fa-play-circle"></i>المتتابعات والمتسلسلات</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- الوحدة 4 -->
-      <div class="accordion-item">
-        <h6 class="accordion-header font-base" id="heading-4">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
-            الهندسة: الأشكال والقياس <span class="small ms-2">(4 دروس)</span>
-          </button>
-        </h6>
-        <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#accordionMathCurriculum">
-          <div class="accordion-body mt-3">
-            <ul class="list-unstyled mb-0">
-              <li><i class="fas fa-play-circle"></i>المثلثات وأنواعها</li>
-              <li><i class="fas fa-play-circle"></i>حساب المحيط والمساحة</li>
-              <li><i class="fas fa-play-circle"></i>الدائرة وخصائصها</li>
-              <li><i class="fas fa-play-circle"></i>تطبيقات هندسية عملية</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- الوحدة 5 -->
-      <div class="accordion-item mb-0">
-        <h6 class="accordion-header font-base" id="heading-5">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
-            الإحصاء والاحتمالات <span class="small ms-2">(3 دروس)</span>
-          </button>
-        </h6>
-        <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#accordionMathCurriculum">
-          <div class="accordion-body mt-3">
-            <ul class="list-unstyled mb-0">
-              <li><i class="fas fa-play-circle"></i>مقدمة في الإحصاء</li>
-              <li><i class="fas fa-play-circle"></i>الجداول والتمثيل البياني</li>
-              <li><i class="fas fa-play-circle"></i>مبادئ الاحتمالات</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- =======================
-محتويات الكورس (Curriculum) END -->
-				</div>
-			</div>
-			<!-- Main content LEFT END -->
-			
-			<!-- Sidebar (Subscription) RIGHT START -->
-			<div class="col-12 col-xl-4 order-xl-2 order-2">
-				<div data-sticky data-margin-top="80" data-sticky-for="768">
-					<div class="row g-4">
-						<div class="col-md-6 col-xl-12">
-							<!-- Course info START -->
-							<div class="card card-body border p-4">
-								<!-- Price and share button -->
-								<div class="d-flex justify-content-between align-items-center">
-									<!-- Price -->
-									<h3 class="fw-bold mb-0 me-2" style="color:var(--brand-purple)">295 د.ك</h3>
-									<!-- Share button with dropdown -->
-									<div class="dropdown">
-										<a href="#" class="btn btn-sm btn-light rounded mb-0 small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
-											<i class="fas fa-fw fa-share-alt"></i>
-										</a>
-										<!-- dropdown button -->
-										<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
-											<li><a  class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>تويتر</a></li>
-											<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>فيسبوك</a></li>
-											<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>لينكدإن</a></li>
-											<li><a class="dropdown-item" href="#"><i class="fas fa-copy me-2"></i>نسخ الرابط</a></li>
-										</ul>
-									</div>
-								</div>
-								<!-- Buttons -->
-								<div class="mt-3 d-grid gap-2 sidebar-action-buttons">
-									<a href="#" class="btn btn-success">اشترك الآن</a>
-									<a href="#" class="btn btn-outline-primary">أضف إلى السلة</a>
-								</div>
-								<!-- Features List in Sidebar START -->
-								<div class="sidebar-features-box mb-3">
-									<h6 class="mb-2" style="color: var(--brand-purple); font-weight: bold;">هذا الكورس يشمل:</h6>
-									<ul class="list-unstyled" style="font-size: 1rem; line-height: 2; text-align: right;">
-										<li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>شرح لجميع دروس المنهج</li>
-										<li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>حل أمثلة الكتاب وحاول أن تحل</li>
-										<li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>مراجعات للقصير الأول والثاني</li>
-										<li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>مراجعات ليلة الاختبار النهائي</li>
-										<li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>مذكرات شرح ومراجعة</li>
-										<li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>حصة لايف أسبوعية مع المدرس</li>
-									</ul>
-								</div>
-								<!-- Rating and follow -->
-								<div class="d-sm-flex justify-content-sm-between align-items-center mt-0 mt-sm-2">
-									<!-- Rating star -->
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-										<li class="list-inline-item ms-2 h6 fw-light mb-0">4.5/5.0</li>
-									</ul>
-								</div>
-							</div>
-							<!-- Course info END -->
-						</div>
-						<!-- Tags START -->
-						<div class="col-md-6 col-xl-12">
-							<div class="card card-body border p-4">
-								<h4 class="mb-3">الكلمات المفتاحية</h4>
-								<ul class="list-inline mb-0">
-									<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">رياضيات</a> </li>
-									<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">وزارة التربية</a> </li>
-									<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">2025</a> </li>
-									<li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">تواصل مباشر</a> </li>
-								</ul>
-							</div>
-						</div>
-						<!-- Tags END -->
-					</div><!-- Row End -->
-				</div>	
-			</div>
-			<!-- Sidebar (Subscription) RIGHT END -->
-
-	
-					
-
-
-			der -->
-
-<!-- =======================
-Footer START -->
-<footer class="pt-5 bg-light">
-	<div class="container">
-		<!-- Row START -->
-		<div class="row g-4">
-
-			<!-- Widget 1 START -->
-			<div class="col-lg-4">
-				<!-- logo -->
-				<a class="me-0" href="index.html">
-					<img class="light-mode-item h-40px" src="assets/images/logo.svg" alt="شعار الموقع">
-				</a>
-				<p class="my-3">منصة تعليمية متخصصة في شرح وتبسيط مناهج الرياضيات لجميع المراحل الدراسية، مع نخبة من أفضل المدرسين.</p>
-				<!-- Social media icon -->
-				<ul class="list-inline mb-0 mt-3">
-					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
-					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
-					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
-				</ul>
-			</div>
-			<!-- Widget 1 END -->
-			<!-- Widget 2 START -->
-			<div class="col-lg-4">
-				<h5 class="mb-2 mb-md-4">روابط سريعة</h5>
-				<ul class="nav flex-column">
-					<li class="nav-item"><a class="nav-link" href="#">الرئيسية</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">الدورات</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">المدرسون</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">تواصل معنا</a></li>
-				</ul>
-			</div>
-			<!-- Widget 2 END -->
-			<!-- Widget 3 START -->
-			<div class="col-lg-4">
-				<h5 class="mb-2 mb-md-4">تواصل معنا</h5>
-				<p class="mb-2">رقم الهاتف: <span class="h6 fw-light ms-2">+966 1234 56789</span></p>
-				<p class="mb-0">البريد الإلكتروني: <span class="h6 fw-light ms-2">info@mathplatform.com</span></p>
-			</div>
-			<!-- Widget 3 END -->
-		</div><!-- Row END -->
-		<!-- Divider -->
-		<hr class="mt-4 mb-0">
-		<!-- Bottom footer -->
-		<div class="py-3">
-			<div class="container px-0">
-				<div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
-					<!-- copyright text -->
-					<div class="text-body text-primary-hover">جميع الحقوق محفوظة © 2024 منصة الرياضيات</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<!-- =======================
-Footer END -->
-
-<!-- Back to top -->
-<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
-
-<!-- Bootstrap JS -->
-<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Vendors -->
-<script src="assets/vendor/sticky-js/sticky.min.js"></script>
-<script src="assets/vendor/plyr/plyr.js"></script>
-
-<!-- Template Functions -->
-<script src="assets/js/functions.js"></script>
-
-<!-- نص توضيحي فوق الشريط السفلي للموبايل START -->
-<style>
-@media (max-width: 767.98px) {
-  .mobile-bar-note {
-    text-align: center;
-    font-size: 1rem;
-    color: #482099;
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-    margin-top: 1.2rem;
-    letter-spacing: 0.2px;
-  }
+/* تصميم عصري لعنوان الكورس والمميزات */
+.hero-card-math {
+  background: linear-gradient(120deg, #f6f8fb 60%, #f9f6d9 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(72,32,153,0.10);
+  padding: 2.1rem 1.2rem 1.2rem 1.2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--brand-purple);
 }
-</style>
-<div class="mobile-bar-note">سعر الكورس شامل كل المميزات</div>
-<!-- نص توضيحي فوق الشريط السفلي للموبايل END -->
-
-<!-- شريط الإجراءات السفلي العصري للموبايل START -->
-<style>
+.hero-card-math .decor-circle {
+  position: absolute;
+  top: -38px;
+  left: -38px;
+  width: 110px;
+  height: 110px;
+  background: linear-gradient(120deg, #ffb547 60%, #1ba39c 100%);
+  opacity: 0.13;
+  border-radius: 50%;
+  z-index: 1;
+}
+.hero-card-math .main-title {
+  color: var(--brand-purple);
+  font-weight: 900;
+  font-size: 1.7rem;
+  margin-bottom: 0.7rem;
+  position: relative;
+  z-index: 2;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(72,32,153,0.08);
+  padding: 0.7rem 1.2rem;
+}
+.hero-card-math .main-title img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #fff;
+  padding: 3px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(72,32,153,0.10);
+  margin-left: 0.7rem;
+}
+.hero-card-math .features-list {
+  margin-bottom: 0.2rem;
+  margin-top: 0.5rem;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.hero-card-math .features-list li {
+  font-size: 1.08rem;
+  color: #333;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(27,163,156,0.07);
+  padding: 0.5rem 1.1rem;
+  min-width: 220px;
+  border: 1.5px solid #f6f8fb;
+  transition: box-shadow 0.18s, border 0.18s;
+}
+.hero-card-math .features-list li:hover {
+  box-shadow: 0 6px 24px rgba(72,32,153,0.13);
+  border-color: var(--brand-teal);
+}
+.hero-card-math .features-list i {
+  color: #fff !important;
+  background: linear-gradient(120deg, var(--brand-teal) 60%, var(--brand-purple) 100%);
+  border-radius: 50%;
+  padding: 0.18rem 0.32rem;
+  font-size: 1.2rem;
+  margin-left: 0.2rem;
+  box-shadow: 0 1px 6px rgba(27,163,156,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767.98px) {
+  .hero-card-math { padding: 1.2rem 0.7rem 0.7rem 0.7rem; }
+  .hero-card-math .main-title { font-size: 1.1rem; padding: 0.5rem 0.7rem; }
+  .hero-card-math .main-title img { width: 36px; height: 36px; }
+  .hero-card-math .features-list li { font-size: 0.98rem; min-width: 120px; padding: 0.4rem 0.7rem; }
+}
 @media (max-width: 767.98px) {
   .modern-mobile-action-bar {
     position: fixed;
@@ -791,9 +494,413 @@ Footer END -->
   }
 }
 @media (min-width: 768px) {
-  .modern-mobile-action-bar, .mobile-bar-note { display: none !important; }
+  .modern-mobile-action-bar { display: none !important; }
+}
+.excellence-tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+.excellence-tool-mini {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(72,32,153,0.09);
+  width: 82px;
+  min-width: 82px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.93rem;
+  color: var(--brand-purple);
+  font-weight: bold;
+  border: 1.5px solid #f6f8fb;
+  transition: box-shadow 0.18s, border 0.18s, background 0.18s;
+  cursor: pointer;
+  padding: 0.5rem 0.2rem 0.3rem 0.2rem;
+}
+.excellence-tool-mini:hover {
+  background: #f9f6d9;
+  box-shadow: 0 6px 24px rgba(72,32,153,0.13);
+  border-color: var(--brand-teal);
+}
+.excellence-tool-mini .tool-icon {
+  font-size: 2rem;
+  color: var(--brand-teal);
+  margin-bottom: 0.3rem;
+  margin-top: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767.98px) {
+  .excellence-tools-grid {
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+  .excellence-tool-mini {
+    width: 70px;
+    min-width: 70px;
+    height: 78px;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.1rem 0.2rem 0.1rem;
+  }
+  .excellence-tool-mini .tool-icon { font-size: 1.5rem; }
 }
 </style>
+
+</head>
+
+<body>
+<!-- Header START -->
+<header class="navbar-light navbar-sticky">
+  <nav class="navbar navbar-expand-xl navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="navbar-brand-item" src="assets/images/bg/3by4/private-4t-logo.png" alt="logo" style="height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3 fw-bold text-white" style="background:#482099; border-radius:2rem;" href="#" id="bookMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">احجز حصتك</a>
+            <ul class="dropdown-menu text-end" aria-labelledby="bookMenu">
+              <li><a class="dropdown-item" href="#">في البيت</a></li>
+              <li><a class="dropdown-item" href="#">في المعهد</a></li>
+              <li><a class="dropdown-item" href="#">أونلاين</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">تعرّف على مدرسينا</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">العروض والباقات</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">فيديوهات شرح</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">الرئيسية</a></li>
+          <li class="nav-item">
+            <a class="nav-link px-2" href="#" title="سلة المشتريات">
+              <i class="bi bi-cart3" style="font-size:1.3rem;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- Header END -->
+
+<main class="pt-3 pt-xl-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Main content -->
+      <div class="col-12 col-xl-8 order-xl-1 order-1">
+        <!-- منطقة العنوان والمميزات -->
+        <div class="hero-card-math mb-2">
+          <span class="decor-circle"></span>
+          <div class="main-title">
+            <img src="assets/images/courses/4by3/riyadiyyat_800x450_letterbox.png" alt="رياضيات">
+            كورس شرح دروس الرياضيات المتكامل
+          </div>
+          <ul class="features-list list-unstyled">
+            <li><i class="fas fa-check-circle"></i>المنهج طبقاً لمنهج وزارة التربية لعام 2025</li>
+            <li><i class="fas fa-check-circle"></i>تواصل مباشر مع المدرس</li>
+            <li><i class="fas fa-check-circle"></i>أمثلة محلولة وتطبيقات عملية لكل درس</li>
+            <li><i class="fas fa-check-circle"></i>مراجعات واختبارات بعد كل وحدة</li>
+            <li><i class="fas fa-check-circle"></i>دروس مُسجّلة ترجع لها بأي وقت</li>
+            <li><i class="fas fa-check-circle"></i>مراجعات خاصة قبل اختبارات القصير</li>
+          </ul>
+        </div>
+        <div class="mb-3"></div>
+        <!-- فيديو -->
+        <div class="video-player rounded-3 mb-4">
+          <video controls crossorigin="anonymous" playsinline poster="assets/images/videos/poster.jpg">
+            <source src="assets/images/videos/360p.mp4" type="video/mp4" size="360">
+            <source src="assets/images/videos/720p.mp4" type="video/mp4" size="720">
+            <source src="assets/images/videos/1080p.mp4" type="video/mp4" size="1080">
+            <track kind="captions" label="Arabic" srclang="ar" src="assets/images/videos/ar.vtt" default>
+          </video>
+        </div>
+        <!-- وصف الكورس -->
+        <div class="card border mb-4">
+          <div class="card-header border-bottom">
+            <h3 class="mb-0">وصف الكورس</h3>
+          </div>
+          <div class="card-body">
+            <p class="mb-3">مرحباً بك في <strong>كورس الرياضيات المتكامل للمرحلة الثانوية</strong> حيث نشرح لك المنهج خطوة بخطوة ونبسط لك أصعب الأفكار حتى تتفوق بدون تعقيد.</p>
+            <p class="mb-3">سوف تتعلم في هذا الكورس جميع دروس المنهج مع تطبيقات عملية، مراجعات واختبارات، بالإضافة إلى تواصل مباشر مع المدرس للإجابة على جميع استفساراتك.</p>
+            <p class="mb-0">هدفنا أن نساعدك على فهم الرياضيات بطريقة سهلة وعملية، ونوفر لك كل الأدوات التي تحتاجها لتحقيق أعلى الدرجات.</p>
+            <div class="collapse" id="collapseContent">
+              <p class="my-3">يشمل الكورس شروحات بالفيديو، مذكرات مراجعة، اختبارات قصيرة بعد كل وحدة، ومراجعات نهائية قبل الامتحانات. كما يمكنك حضور حصة لايف أسبوعية مع المدرس وطرح جميع أسئلتك.</p>
+              <p class="mb-0">كل الدروس متاحة لك في أي وقت ويمكنك الرجوع إليها متى احتجت، مع دعم فني وتعليمي مستمر طوال فترة الكورس.</p>
+            </div>
+            <a class="p-0 mb-0 mt-2 btn-more d-flex align-items-center" data-bs-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">
+              <span class="see-more ms-1">عرض المزيد</span><span class="see-less ms-1">عرض أقل</span><i class="fas fa-angle-down ms-2"></i>
+            </a>
+          </div>
+        </div>
+        <!-- أدوات التفوق (Excellence Tools) START -->
+        <div class="card my-4 excellence-tools-card">
+          <div class="card-header border-bottom px-4 py-2 bg-white" style="border-radius:1.2rem 1.2rem 0 0;">
+            <h3 class="mb-0 excellence-tools-title">أدوات التفوق</h3>
+          </div>
+          <div class="card-body p-2">
+            <div class="excellence-tools-grid">
+              <a href="download-math-summary.html" class="excellence-tool-mini">
+                <span class="tool-icon"><i class="fas fa-book-open"></i></span>
+                شرح المنهج
+              </a>
+              <a href="download-solved-tests.html" class="excellence-tool-mini">
+                <span class="tool-icon"><i class="fas fa-clipboard-check"></i></span>
+                اختبارات محلولة
+              </a>
+              <a href="download-math-book-solutions.html" class="excellence-tool-mini">
+                <span class="tool-icon"><i class="fas fa-calculator"></i></span>
+                حلول التمارين
+              </a>
+              <a href="download-math-reports.html" class="excellence-tool-mini">
+                <span class="tool-icon"><i class="fas fa-chart-bar"></i></span>
+                تقارير رياضيات
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- أدوات التفوق (Excellence Tools) END -->
+
+        <!-- محتويات الكورس (Curriculum) START -->
+        <div class="card my-4 course-curriculum-card">
+          <div class="card-header border-bottom px-4 py-3 bg-white" style="border-radius:1.2rem 1.2rem 0 0;">
+            <h3 class="mb-0 course-curriculum-title">محتويات الكورس</h3>
+          </div>
+          <div class="card-body p-4">
+            <div class="accordion accordion-icon accordion-bg-light" id="accordionMathCurriculum">
+              <!-- الوحدة 1 -->
+              <div class="accordion-item">
+                <h6 class="accordion-header font-base" id="heading-1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                    الجبر: المفاهيم الأساسية <span class="small ms-2">(3 دروس)</span>
+                  </button>
+                </h6>
+                <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#accordionMathCurriculum">
+                  <div class="accordion-body mt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li><i class="fas fa-play-circle"></i>مقدمة في الجبر</li>
+                      <li><i class="fas fa-play-circle"></i>المتغيرات والتعابير الجبرية</li>
+                      <li><i class="fas fa-play-circle"></i>المعادلات البسيطة</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- الوحدة 2 -->
+              <div class="accordion-item">
+                <h6 class="accordion-header font-base" id="heading-2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                    المعادلات الخطية والمتباينات <span class="small ms-2">(4 دروس)</span>
+                  </button>
+                </h6>
+                <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionMathCurriculum">
+                  <div class="accordion-body mt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li><i class="fas fa-play-circle"></i>حل المعادلات الخطية ذات المجهول الواحد</li>
+                      <li><i class="fas fa-play-circle"></i>المعادلات ذات المجهولين</li>
+                      <li><i class="fas fa-play-circle"></i>المتباينات الخطية</li>
+                      <li><i class="fas fa-play-circle"></i>تطبيقات حياتية على المعادلات</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- الوحدة 3 -->
+              <div class="accordion-item">
+                <h6 class="accordion-header font-base" id="heading-3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                    الدوال والمتتابعات <span class="small ms-2">(3 دروس)</span>
+                  </button>
+                </h6>
+                <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#accordionMathCurriculum">
+                  <div class="accordion-body mt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li><i class="fas fa-play-circle"></i>مفهوم الدالة</li>
+                      <li><i class="fas fa-play-circle"></i>تمثيل الدوال بيانياً</li>
+                      <li><i class="fas fa-play-circle"></i>المتتابعات والمتسلسلات</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- الوحدة 4 -->
+              <div class="accordion-item">
+                <h6 class="accordion-header font-base" id="heading-4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                    الهندسة: الأشكال والقياس <span class="small ms-2">(4 دروس)</span>
+                  </button>
+                </h6>
+                <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#accordionMathCurriculum">
+                  <div class="accordion-body mt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li><i class="fas fa-play-circle"></i>المثلثات وأنواعها</li>
+                      <li><i class="fas fa-play-circle"></i>حساب المحيط والمساحة</li>
+                      <li><i class="fas fa-play-circle"></i>الدائرة وخصائصها</li>
+                      <li><i class="fas fa-play-circle"></i>تطبيقات هندسية عملية</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- الوحدة 5 -->
+              <div class="accordion-item mb-0">
+                <h6 class="accordion-header font-base" id="heading-5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                    الإحصاء والاحتمالات <span class="small ms-2">(3 دروس)</span>
+                  </button>
+                </h6>
+                <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#accordionMathCurriculum">
+                  <div class="accordion-body mt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li><i class="fas fa-play-circle"></i>مقدمة في الإحصاء</li>
+                      <li><i class="fas fa-play-circle"></i>الجداول والتمثيل البياني</li>
+                      <li><i class="fas fa-play-circle"></i>مبادئ الاحتمالات</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- محتويات الكورس (Curriculum) END -->
+      </div>
+      <!-- Sidebar -->
+      <div class="col-12 col-xl-4 order-xl-2 order-2">
+        <div class="sticky-sidebar-box">
+          <div class="card card-body border p-4">
+            <div class="d-flex justify-content-between align-items-center">
+              <h3 class="fw-bold mb-0 me-2" style="color:var(--brand-purple)">295 د.ك</h3>
+              <div class="dropdown">
+                <a href="#" class="btn btn-sm btn-light rounded mb-0 small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-fw fa-share-alt"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+                  <li><a  class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>تويتر</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>فيسبوك</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>لينكدإن</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-copy me-2"></i>نسخ الرابط</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="discount-code-box mt-3">
+              <input type="text" id="discountCodeInput" class="discount-code-input" placeholder="أدخل كود الخصم...">
+              <button type="button" class="discount-apply-btn" onclick="applyDiscountCode()">تطبيق</button>
+            </div>
+            <div id="discountMessage" class="discount-message"></div>
+            <div class="share-icons-row">
+              <a class="share-icon-link" href="https://wa.me/?text=شاهد هذا الكورس الرائع!" target="_blank" title="مشاركة عبر واتساب"><i class="fab fa-whatsapp"></i></a>
+              <a class="share-icon-link" href="https://www.instagram.com/" target="_blank" title="مشاركة عبر إنستجرام"><i class="fab fa-instagram"></i></a>
+              <a class="share-icon-link" href="https://www.facebook.com/sharer/sharer.php?u=#" target="_blank" title="مشاركة عبر فيسبوك"><i class="fab fa-facebook-f"></i></a>
+              <a class="share-icon-link" href="https://twitter.com/intent/tweet?text=شاهد هذا الكورس الرائع!" target="_blank" title="مشاركة عبر تويتر"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="mt-3 d-grid gap-2 sidebar-action-buttons">
+              <a href="#" class="btn btn-success">اشترك الآن</a>
+              <a href="#" class="btn btn-outline-primary">أضف إلى السلة</a>
+            </div>
+            <div class="sidebar-features-box mb-3">
+              <h6 class="mb-2" style="color: var(--brand-purple); font-weight: bold;">هذا الكورس يشمل:</h6>
+              <ul class="list-unstyled" style="font-size: 1rem; line-height: 2; text-align: right;">
+                <li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>شرح لجميع دروس المنهج</li>
+                <li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>حل أمثلة الكتاب وحاول أن تحل</li>
+                <li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>مراجعات للقصير الأول والثاني</li>
+                <li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>مراجعات ليلة الاختبار النهائي</li>
+                <li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>مذكرات شرح ومراجعة</li>
+                <li class="mb-1 d-flex align-items-center"><i class="fas fa-check-circle text-success ms-2"></i>حصة لايف أسبوعية مع المدرس</li>
+              </ul>
+            </div>
+            <div class="d-sm-flex justify-content-sm-between align-items-center mt-0 mt-sm-2">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
+                <li class="list-inline-item ms-2 h6 fw-light mb-0">4.5/5.0</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card card-body border p-4">
+            <h4 class="mb-3">الكلمات المفتاحية</h4>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">رياضيات</a> </li>
+              <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">وزارة التربية</a> </li>
+              <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">2025</a> </li>
+              <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm" href="#">تواصل مباشر</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer START -->
+<footer class="pt-5 bg-light">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="me-0" href="index.html">
+          <img class="light-mode-item h-40px" src="assets/images/logo.svg" alt="شعار الموقع">
+        </a>
+        <p class="my-3">منصة تعليمية متخصصة في شرح وتبسيط مناهج الرياضيات لجميع المراحل الدراسية، مع نخبة من أفضل المدرسين.</p>
+        <ul class="list-inline mb-0 mt-3">
+          <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
+          <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
+          <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h5 class="mb-2 mb-md-4">روابط سريعة</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link" href="#">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">الدورات</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">المدرسون</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h5 class="mb-2 mb-md-4">تواصل معنا</h5>
+        <p class="mb-2">رقم الهاتف: <span class="h6 fw-light ms-2">+966 1234 56789</span></p>
+        <p class="mb-0">البريد الإلكتروني: <span class="h6 fw-light ms-2">info@mathplatform.com</span></p>
+      </div>
+    </div>
+    <hr class="mt-4 mb-0">
+    <div class="py-3">
+      <div class="container px-0">
+        <div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
+          <div class="text-body text-primary-hover">جميع الحقوق محفوظة © 2024 منصة الرياضيات</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer END -->
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/sticky-js/sticky.min.js"></script>
+<script src="assets/vendor/plyr/plyr.js"></script>
+<script src="assets/js/functions.js"></script>
+<!-- كود الخصم -->
+<script>
+function applyDiscountCode() {
+  var input = document.getElementById('discountCodeInput');
+  var msg = document.getElementById('discountMessage');
+  if(input.value.trim() !== '') {
+    msg.textContent = 'تم تطبيق الخصم بنجاح!';
+    msg.classList.add('active');
+  } else {
+    msg.textContent = 'يرجى إدخال كود الخصم.';
+    msg.classList.add('active');
+  }
+  setTimeout(function(){ msg.classList.remove('active'); }, 2500);
+}
+</script>
 <div class="modern-mobile-action-bar">
   <button class="btn btn-main">
     <i class="fas fa-star"></i>
@@ -804,7 +911,5 @@ Footer END -->
     <i class="fas fa-shopping-cart"></i>
   </button>
 </div>
-<!-- شريط الإجراءات السفلي العصري للموبايل END -->
-
 </body>
 </html>
