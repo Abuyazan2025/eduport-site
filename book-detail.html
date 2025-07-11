@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <title>استكمال بيانات الحجز | Private 4T</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style-rtl.css">
+  <style>
+    :root {
+      --brand-brown: #8c6042;
+      --brand-purple: #482099;
+      --brand-teal: #1ba39c;
+      --brand-beige: #f9f6d9;
+      --brand-yellow: #ffb547;
+      --brand-light: #f7f7fa;
+    }
+    body { background: #f7f7fa; }
+    .brand-title-bar {
+      background: var(--brand-purple);
+      color: #fff;
+      border-radius: 1.5rem 1.5rem 0 0;
+      box-shadow: 0 4px 16px #48209922;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      text-align: right;
+      padding: 1rem 2rem 1rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .card-custom {
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 16px rgba(72,32,153,0.08);
+      border: none;
+      background: var(--brand-light);
+    }
+    .form-section {
+      background: #fffbe6;
+      border-radius: 1.25rem;
+      box-shadow: 0 2px 8px #ffb54722;
+      padding: 2rem 2rem 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .form-label {
+      color: var(--brand-purple);
+      font-weight: 500;
+      text-align: right;
+      display: block;
+    }
+    .form-select, .form-control {
+      border-radius: 1rem;
+      border: 1px solid #e0e0e0;
+      box-shadow: none;
+      text-align: right;
+      direction: rtl;
+      background: #fff;
+    }
+    .btn-brand {
+      background: var(--brand-brown);
+      color: #fff;
+      border-radius: 2rem;
+      font-weight: 700;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px #8c604233;
+    }
+    .btn-brand:hover, .btn-brand:focus {
+      background: var(--brand-yellow);
+      color: var(--brand-purple);
+    }
+    .summary-table {
+      background: #fff;
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 16px rgba(72,32,153,0.08);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      margin-bottom: 2rem;
+      min-width: 240px;
+    }
+    .summary-table-title {
+      color: var(--brand-purple);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .summary-table-row {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      font-size: 1rem;
+      margin-bottom: 0.7rem;
+      color: #333;
+    }
+    .summary-table-row .label {
+      color: #888;
+      min-width: 70px;
+    }
+    .summary-table-row .value {
+      font-weight: 500;
+    }
+    .summary-table-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--brand-brown);
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+    @media (max-width: 991.98px) {
+      .brand-title-bar { font-size: 1.1rem; padding: 0.75rem 1rem; }
+      .form-section, .summary-table { padding: 1.2rem 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+<!-- Header START -->
+<header class="navbar-light navbar-sticky">
+  <nav class="navbar navbar-expand-xl navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="navbar-brand-item" src="assets/images/bg/3by4/private-4t-logo.png" alt="logo" style="height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3 fw-bold text-white" style="background:#482099; border-radius:2rem;" href="#" id="bookMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              احجز حصتك
+            </a>
+            <ul class="dropdown-menu text-end" aria-labelledby="bookMenu">
+              <li><a class="dropdown-item" href="#">في البيت</a></li>
+              <li><a class="dropdown-item" href="#">في المعهد</a></li>
+              <li><a class="dropdown-item" href="#">أونلاين</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">تعرّف على مدرسينا</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">العروض والباقات</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">فيديوهات شرح</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">الرئيسية</a></li>
+          <li class="nav-item">
+            <a class="nav-link px-2" href="#" title="سلة المشتريات">
+              <i class="bi bi-cart3" style="font-size:1.3rem;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- Header END -->
+<main class="container py-4">
+  <div class="brand-title-bar"><i class="bi bi-calendar2-check"></i>حدد الموعد والعنوان</div>
+  <div class="row justify-content-center">
+    <!-- جدول البيانات (النموذج) يمين -->
+    <div class="col-lg-7">
+      <div class="form-section">
+        <form id="detailsForm" autocomplete="off">
+          <div class="mb-3">
+            <label for="date" class="form-label">التاريخ</label>
+            <input type="date" class="form-control" id="date" name="date" required value="2025-07-11">
+          </div>
+          <div class="mb-3">
+            <label for="time" class="form-label">وقت الحصة</label>
+            <input type="time" class="form-control" id="time" name="time" required value="10:30">
+          </div>
+          <div class="mb-3">
+            <label for="governorate" class="form-label">المحافظة</label>
+            <select class="form-select" id="governorate" name="governorate" required>
+              <option value="">اختر المحافظة</option>
+              <option value="العاصمة">العاصمة</option>
+              <option value="حولي">حولي</option>
+              <option value="الفروانية">الفروانية</option>
+              <option value="الأحمدي">الأحمدي</option>
+              <option value="مبارك الكبير">مبارك الكبير</option>
+              <option value="الجهراء">الجهراء</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="area" class="form-label">المنطقة</label>
+            <select class="form-select" id="area" name="area" required>
+              <option value="">اختر المنطقة</option>
+              <option value="الشويخ">الشويخ</option>
+              <option value="السالمية">السالمية</option>
+              <option value="الفحيحيل">الفحيحيل</option>
+              <option value="العارضية">العارضية</option>
+              <option value="المنقف">المنقف</option>
+              <option value="الصليبية">الصليبية</option>
+              <!-- أضف المزيد حسب الحاجة -->
+            </select>
+          </div>
+          <button type="submit" class="btn btn-brand w-100">التالي</button>
+        </form>
+      </div>
+    </div>
+    <!-- ملخص الحجز يسار -->
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <div class="summary-table">
+        <div class="summary-table-title"><i class="bi bi-info-circle"></i>ملخصك</div>
+        <div class="summary-table-row"><span class="label">التاريخ:</span><span class="value" id="sum-date">2025-07-11</span></div>
+        <div class="summary-table-row"><span class="label">الوقت:</span><span class="value" id="sum-time">10:30 صباحًا</span></div>
+        <div class="summary-table-row"><span class="label">المحافظة:</span><span class="value" id="sum-governorate">العاصمة</span></div>
+        <div class="summary-table-row"><span class="label">المنطقة:</span><span class="value" id="sum-area">الشويخ</span></div>
+        <div class="summary-table-row summary-table-price"><span class="label">السعر:</span> <span class="value" id="sum-price">— د.ك</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/choices/js/choices.min.js"></script>
+<script src="assets/js/functions.js"></script>
+<script>
+// تهيئة Choices.js مع دعم RTL
+if (window.Choices) {
+  const choicesOptions = {
+    searchEnabled: false,
+    shouldSort: false,
+    direction: 'rtl',
+    itemSelectText: '',
+  };
+  new Choices('#governorate', choicesOptions);
+  new Choices('#area', choicesOptions);
+}
+// تحديث الملخص تلقائيًا
+const dateInput = document.getElementById('date');
+const timeInput = document.getElementById('time');
+const govInput = document.getElementById('governorate');
+const areaInput = document.getElementById('area');
+function updateSummary() {
+  document.getElementById('sum-date').textContent = dateInput.value;
+  document.getElementById('sum-time').textContent = timeInput.value ? (timeInput.value + ' صباحًا') : '';
+  document.getElementById('sum-governorate').textContent = govInput.options[govInput.selectedIndex].text;
+  document.getElementById('sum-area').textContent = areaInput.options[areaInput.selectedIndex].text;
+}
+[dateInput, timeInput, govInput, areaInput].forEach(el => {
+  el.addEventListener('change', updateSummary);
+});
+updateSummary();
+</script>
+</body>
+</html>
