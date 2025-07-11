@@ -1,222 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-	<title>Eduport - LMS, Education and Course Theme</title>
-
-	<!-- Meta Tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Webestica.com">
-	<meta name="description" content="Eduport- LMS, Education and Course Theme">
-
-	<!-- Dark mode -->
-	<script>
-		const storedTheme = localStorage.getItem('theme')
- 
-		const getPreferredTheme = () => {
-			if (storedTheme) {
-				return storedTheme
-			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
-		}
-
-		const setTheme = function (theme) {
-			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.setAttribute('data-bs-theme', 'dark')
-			} else {
-				document.documentElement.setAttribute('data-bs-theme', theme)
-			}
-		}
-
-		setTheme(getPreferredTheme())
-
-		window.addEventListener('DOMContentLoaded', () => {
-		    var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
-				const showActiveTheme = theme => {
-				const activeThemeIcon = document.querySelector('.theme-icon-active use')
-				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
-
-				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-					element.classList.remove('active')
-				})
-
-				btnToActive.classList.add('active')
-				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-			}
-
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-				if (storedTheme !== 'light' || storedTheme !== 'dark') {
-					setTheme(getPreferredTheme())
-				}
-			})
-
-			showActiveTheme(getPreferredTheme())
-
-			document.querySelectorAll('[data-bs-theme-value]')
-				.forEach(toggle => {
-					toggle.addEventListener('click', () => {
-						const theme = toggle.getAttribute('data-bs-theme-value')
-						localStorage.setItem('theme', theme)
-						setTheme(theme)
-						showActiveTheme(theme)
-					})
-				})
-
-			}
-		})
-		
-	</script>
-
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="assets/images/favicon.ico">
-
-	<!-- Google Font -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
-
-	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
-
-	<!-- Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>تسجيل الدخول | برايفت فورتي</title>
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/color.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f9f6d9 0%, #fff 60%, #e6eaff 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
+    /* لمسات جمالية للخلفية */
+    .bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.13;
+      z-index: 0;
+      filter: blur(2px);
+      pointer-events: none;
+    }
+    .bg-shape1 {
+      width: 340px; height: 340px;
+      background: #482099;
+      top: -90px; left: -90px;
+    }
+    .bg-shape2 {
+      width: 220px; height: 220px;
+      background: #1BA39C;
+      bottom: -70px; right: -70px;
+    }
+    .bg-shape3 {
+      width: 120px; height: 120px;
+      background: #FFB547;
+      top: 60%; left: 60%;
+      transform: translate(-50%, -50%);
+    }
+    .brand-card {
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 8px 40px 0 rgba(72,32,153,0.10), 0 1.5px 8px 0 rgba(27,163,156,0.08);
+      padding: 2.7rem 2rem 2.2rem 2rem;
+      position: relative;
+      z-index: 2;
+      border: 1.5px solid #f0f0f0;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .brand-card:hover {
+      box-shadow: 0 16px 48px 0 rgba(72,32,153,0.16), 0 2px 12px 0 rgba(27,163,156,0.12);
+      transform: translateY(-2px) scale(1.012);
+    }
+    .brand-accent {
+      color: #482099;
+    }
+    .btn-primary {
+      background: #1BA39C;
+      border-color: #1BA39C;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background: #482099;
+      border-color: #482099;
+    }
+    .form-label { font-weight: 500; }
+    .input-group-text img { width: 20px; height: 14px; margin-left: 0.25rem; }
+    .form-control, .form-select { min-height: 48px; }
+    /* تحسين محاذاة زر واختيارات الصفوف */
+    #grade.form-select, #grade.form-select option {
+      text-align: right;
+      direction: rtl;
+    }
+    @media (max-width: 767px) {
+      .brand-card { padding: 1.5rem 0.5rem; border-radius: 1.2rem; }
+      .bg-shape1 { width: 180px; height: 180px; top: -40px; left: -40px; }
+      .bg-shape2 { width: 100px; height: 100px; bottom: -30px; right: -30px; }
+      .bg-shape3 { width: 60px; height: 60px; }
+    }
+  </style>
 </head>
-
 <body>
-
-<!-- **************** MAIN CONTENT START **************** -->
-<main>
-	<section class="p-0 d-flex align-items-center position-relative overflow-hidden">
-	
-		<div class="container-fluid">
-			<div class="row">
-				<!-- left -->
-				<div class="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-primary bg-opacity-10 vh-lg-100">
-					<div class="p-3 p-lg-5">
-						<!-- Title -->
-						<div class="text-center">
-							<h2 class="fw-bold">Welcome to our largest community</h2>
-							<p class="mb-0 h6 fw-light">Let's learn something new today!</p>
-						</div>
-						<!-- SVG Image -->
-						<img src="assets/images/element/02.svg" class="mt-5" alt="">
-						<!-- Info -->
-						<div class="d-sm-flex mt-5 align-items-center justify-content-center">
-							<!-- Avatar group -->
-							<ul class="avatar-group mb-2 mb-sm-0">
-								<li class="avatar avatar-sm">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar">
-								</li>
-								<li class="avatar avatar-sm">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
-								</li>
-								<li class="avatar avatar-sm">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
-								</li>
-								<li class="avatar avatar-sm">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
-								</li>
-							</ul>
-							<!-- Content -->
-							<p class="mb-0 h6 fw-light ms-0 ms-sm-3">4k+ Students joined us, now it's your turn.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- Right -->
-				<div class="col-12 col-lg-6 m-auto">
-					<div class="row my-5">
-						<div class="col-sm-10 col-xl-8 m-auto">
-							<!-- Title -->
-							<span class="mb-0 fs-1">👋</span>
-							<h1 class="fs-2">Login into Eduport!</h1>
-							<p class="lead mb-4">Nice to see you! Please log in with your account.</p>
-
-							<!-- Form START -->
-							<form>
-								<!-- Email -->
-								<div class="mb-4">
-									<label for="exampleInputEmail1" class="form-label">Email address *</label>
-									<div class="input-group input-group-lg">
-										<span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-envelope-fill"></i></span>
-										<input type="email" class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail" id="exampleInputEmail1">
-									</div>
-								</div>
-								<!-- Password -->
-								<div class="mb-4">
-									<label for="inputPassword5" class="form-label">Password *</label>
-									<div class="input-group input-group-lg">
-										<span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="fas fa-lock"></i></span>
-										<input type="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="password" id="inputPassword5">
-									</div>
-									<div id="passwordHelpBlock" class="form-text">
-										Your password must be 8 characters at least 
-									</div>
-								</div>
-								<!-- Check box -->
-								<div class="mb-4 d-flex justify-content-between">
-									<div class="form-check">
-										<input type="checkbox" class="form-check-input" id="exampleCheck1">
-										<label class="form-check-label" for="exampleCheck1">Remember me</label>
-									</div>
-									<div class="text-primary-hover">
-										<a href="forgot-password.html" class="text-secondary">
-											<u>Forgot password?</u>
-										</a>
-									</div>
-								</div>
-								<!-- Button -->
-								<div class="align-items-center mt-0">
-									<div class="d-grid">
-										<button class="btn btn-primary mb-0" type="button">Login</button>
-									</div>
-								</div>
-							</form>
-							<!-- Form END -->
-
-							<!-- Social buttons and divider -->
-							<div class="row">
-								<!-- Divider with text -->
-								<div class="position-relative my-4">
-									<hr>
-									<p class="small position-absolute top-50 start-50 translate-middle bg-body px-5">Or</p>
-								</div>
-
-								<!-- Social btn -->
-								<div class="col-xxl-6 d-grid">
-									<a href="#" class="btn bg-google mb-2 mb-xxl-0"><i class="fab fa-fw fa-google text-white me-2"></i>Login with Google</a>
-								</div>
-								<!-- Social btn -->
-								<div class="col-xxl-6 d-grid">
-									<a href="#" class="btn bg-facebook mb-0"><i class="fab fa-fw fa-facebook-f me-2"></i>Login with Facebook</a>
-								</div>
-							</div>
-
-							<!-- Sign up link -->
-							<div class="mt-4 text-center">
-								<span>Don't have an account? <a href="sign-up.html">Signup here</a></span>
-							</div>
-						</div>
-					</div> <!-- Row END -->
-				</div>
-			</div> <!-- Row END -->
-		</div>
-	</section>
-</main>
-<!-- **************** MAIN CONTENT END **************** -->
-
-<!-- Back to top -->
-<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
-
-<!-- Bootstrap JS -->
-<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Template Functions -->
-<script src="assets/js/functions.js"></script>
-
+  <div class="bg-shape bg-shape1"></div>
+  <div class="bg-shape bg-shape2"></div>
+  <div class="bg-shape bg-shape3"></div>
+  <!-- Header START -->
+  <header class="navbar-light navbar-sticky">
+    <nav class="navbar navbar-expand-xl navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img class="navbar-brand-item" src="assets/images/bg/3by4/private-4t-logo.png" alt="برايفت فورتي logo" style="height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-3 fw-bold text-white" style="background:#482099; border-radius:2rem;" href="#" id="bookMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                احجز حصتك
+              </a>
+              <ul class="dropdown-menu text-end" aria-labelledby="bookMenu">
+                <li><a class="dropdown-item" href="#">في البيت</a></li>
+                <li><a class="dropdown-item" href="#">في المعهد</a></li>
+                <li><a class="dropdown-item" href="#">أونلاين</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link px-3" href="#">تعرّف على مدرسينا</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#">العروض والباقات</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#">فيديوهات شرح</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#">الرئيسية</a></li>
+            <li class="nav-item">
+              <a class="nav-link px-2" href="#" title="سلة المشتريات">
+                <i class="bi bi-cart3" style="font-size:1.3rem;"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Header END -->
+  <main>
+    <div class="container py-5 d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+      <div class="row w-100 justify-content-center">
+        <div class="col-12 col-md-8 col-lg-5">
+          <div class="brand-card mx-auto" style="max-width: 420px;">
+            <h2 class="mb-2 text-center" style="font-size:2rem; font-weight:900; color:#482099; letter-spacing:-1px;">
+              تسجيل الدخول
+            </h2>
+            <p class="mb-4 text-center">يرجى إدخال رقم الهاتف والصف، وسيصلك رمز الدخول عبر رسالة SMS.</p>
+            <form>
+              <div class="mb-3">
+                <label for="phone" class="form-label">رقم الهاتف <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text"><img src="https://flagcdn.com/w20/kw.png" alt="KW">+965</span>
+                  <input type="tel" class="form-control" id="phone" pattern="\d{8}" placeholder="XXXXXXXX" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="grade" class="form-label">الصف الدراسي <span class="text-danger">*</span></label>
+                <select id="grade" class="form-select" required>
+                  <option value="">— اختر الصف —</option>
+                  <option value="1">الصف الأول الابتدائي</option>
+                  <option value="2">الصف الثاني الابتدائي</option>
+                  <option value="3">الصف الثالث الابتدائي</option>
+                  <option value="4">الصف الرابع الابتدائي</option>
+                  <option value="5">الصف الخامس الابتدائي</option>
+                  <option value="6">الصف السادس الابتدائي</option>
+                  <option value="7">الصف السابع المتوسط</option>
+                  <option value="8">الصف الثامن المتوسط</option>
+                  <option value="9">الصف التاسع المتوسط</option>
+                  <option value="10">الصف العاشر الثانوي</option>
+                  <option value="11">الصف الحادي عشر الثانوي</option>
+                  <option value="12">الصف الثاني عشر الثانوي</option>
+                </select>
+              </div>
+              <div class="d-grid mt-4">
+                <button class="btn btn-primary mb-0" type="submit">دخول</button>
+              </div>
+            </form>
+            <div class="mt-4 text-center">
+              <span>ليس لديك حساب؟ <a href="sign-up.html" class="brand-accent">إنشاء حساب جديد</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/functions.js"></script>
 </body>
 </html>

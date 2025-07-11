@@ -523,6 +523,174 @@ body {
 }
 </style>
 
+<!-- =======================
+
+<!-- =======================
+Main Banner END -->
+
+
+<!-- أنماط الإحصائيات المدمجة مع الهيرو -->
+<style>
+.stats-hero-wrapper {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+.stats-hero {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: flex-end;
+}
+.stat-hero-box {
+  background: rgba(255,255,255,0.18) !important;
+  border-radius: 1.2rem !important;
+  box-shadow: 0 4px 24px 0 rgba(72,32,153,0.10), 0 1.5px 8px 0 rgba(27,163,156,0.08) !important;
+  border: 1.5px solid rgba(255,255,255,0.35) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: transform .18s, box-shadow .18s;
+  color: #482099;
+  min-width: 260px;
+  max-width: 320px;
+  height: 82px;
+  flex: 1 1 280px;
+  padding: 0.7rem 1.1rem 0.7rem 1.1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  position: relative;
+  margin-bottom: 0.2rem;
+}
+.stat-hero-box:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 24px #1ba39c22;
+}
+.stat-hero-icon {
+  background: linear-gradient(135deg, var(--brand-teal) 60%, var(--brand-purple) 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px #1ba39c22;
+  border: 2px solid rgba(255,255,255,0.25);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem;
+  margin-bottom: 0;
+  margin-left: 0.7rem;
+  flex-shrink: 0;
+}
+.stat-hero-box:nth-child(2) .stat-hero-icon { background: linear-gradient(135deg, var(--brand-purple) 60%, var(--brand-brown) 100%) !important;}
+.stat-hero-box:nth-child(3) .stat-hero-icon { background: linear-gradient(135deg, var(--brand-brown) 60%, var(--brand-teal) 100%) !important;}
+.stat-hero-number {
+  color: #482099 !important;
+  font-weight: 900;
+  font-size: 2.1rem;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.25);
+  margin-bottom: 0.1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  letter-spacing: -1px;
+}
+.stat-hero-label {
+  color: #1ba39c !important;
+  font-weight: 500;
+  text-align: right;
+  line-height: 1.3;
+  white-space: normal;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.18);
+  margin-top: 0.1rem;
+}
+@media (max-width: 991.98px) {
+  .stat-hero-box {min-width: 180px; max-width: 220px; height: 70px; padding: 0.5rem 0.7rem;}
+  .stat-hero-icon {width: 32px; height: 32px; font-size: 1.2rem; margin-left: 0.5rem;}
+  .stat-hero-number {font-size: 1.2rem;}
+}
+@media (max-width: 767.98px) {
+  .stats-hero-wrapper {margin-top: 0.7rem;}
+  .stat-hero-box {
+    min-width: 34vw !important;
+    max-width: 35vw !important;
+    height: 70px !important;
+    padding: 0.5rem 0.2rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+  }
+  .stat-hero-icon {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 0.1rem !important;
+  }
+  .stat-hero-number {
+    font-size: 1.15rem !important;
+    margin: 0 !important;
+  }
+  .stat-hero-label {
+    font-size: 0.8rem !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .stats-hero {gap: 0.5rem !important;}
+}
+@media (max-width: 480px) {
+  .stat-hero-box {
+    min-width: 68vw;
+    max-width: 75vw;
+    height: 60px;
+    padding: 0.4rem 0.5rem;
+  }
+  .stat-hero-icon {width: 28px; height: 28px; font-size: 1rem; margin-left: 0.3rem;}
+  .stat-hero-number {font-size: 1.05rem; margin-left: 0.3rem; margin-right: 0.3rem;}
+}
+</style>
+
+<style>
+@media (max-width: 767.98px) {
+  .stats-hero {
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+  }
+  .stat-hero-box {
+    min-width: 32vw !important;
+    max-width: 33vw !important;
+    height: 60px !important;
+    padding: 0.3rem 0.2rem !important;
+    margin-right: 0 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+  }
+  .stat-hero-icon {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 1.1rem !important;
+    margin-left: 0 !important;
+    margin-bottom: 0.1rem !important;
+  }
+  .stat-hero-number {
+    font-size: 1rem !important;
+    margin: 0 !important;
+  }
+  .stat-hero-label {
+    font-size: 0.7rem !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .stats-hero-wrapper {
+    overflow-x: unset !important;
+    justify-content: center !important;
+    margin-top: 0.5rem !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -569,79 +737,64 @@ body {
 </header>
 <!-- Header END -->
 
-<!-- **************** MAIN CONTENT START **************** -->
-<main>
-
 <!-- =======================
 Main Banner START -->
-<section class="overflow-hidden pt-6 pt-xxl-0" style="background-color: #482099; position: relative; z-index: 1;">
-	<div class="container-fluid">
-		<div class="d-flex main-hero-flex flex-row flex-md-row align-items-center justify-content-center" style="min-height: 400px;">
-			<!-- صورة مع خلفية فاتحة ولمسة جمالية -->
-			<div class="d-flex justify-content-center align-items-center order-1 order-md-1" style="flex: 0 0 48%; max-width: 320px; min-width: 140px;">
-			  <div style="background: #f9f6d9; border-radius: 1.5rem; box-shadow: 0 4px 24px rgba(72,32,153,0.10); display: flex; align-items: center; justify-content: center; padding: 0; width: 100%; max-width: 260px;">
-				<img src="assets/images/bg/3by4/tutoring-vs-recorded.png" class="img-fluid rounded-3" alt="طالبة" style="width: 100%; height: auto; max-width: 260px; display: block;">
-			  </div>
-			</div>
-			<!-- النصوص والشعار والأزرار -->
-			<div class="d-flex flex-column justify-content-center align-items-end ps-3 order-2 order-md-2" style="flex: 1 1 48%; min-width: 140px;">
-			  <h1 class="fs-2 fw-bold mb-2 text-end" style="line-height:1.4; color: #fff;">
-				<span style="display:block;">كل دروسك ومدرسينك</span>
-				<span style="display:block; font-weight:500; font-size:1.7rem;">في مكان واحد</span>
-			  </h1>
-			  <p class="fs-6 mb-3 text-end" style="max-width: 250px; line-height:1.7; color: #e0e0e0;">
-				<span style="display:block;">حصص بالبيت ودروس أونلاين</span>
-				<span style="display:block; font-weight:500; font-size:1.1rem;">كل شي عندك جاهز</span>
-			  </p>
-			  <div class="d-flex flex-wrap gap-2 justify-content-end">
-				<a href="#" class="btn btn-lg" style="background-color: #ffb547; color: #482099; font-weight:700; min-width: 160px; border-radius: 2rem; box-shadow: 0 2px 8px rgba(255,181,71,0.10);">
-				  احجز حصتك
-				</a>
-				<a href="#" class="btn btn-lg" style="background-color: #1ba39c; color: #fff; min-width: 160px; border-radius: 2rem;">
-				  شاهد دروسك الآن
-				</a>
-			  </div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- قسم إحصائيات المنصة -->
-<section class="my-2 stats-section" style="margin-top:-3.5rem; margin-bottom: 1.2rem; padding: 0 8px; position: relative; z-index: 2; background: #482099;">
-  <div class="stats-wrapper">
-    <!-- بطاقة الحصص -->
-    <div class="d-flex flex-column align-items-center">
-      <div class="stat-box" style="background: #f9f6d9;">
-        <div class="stat-icon" style="background:var(--brand-teal);">
-          <i class="bi bi-book"></i>
+<section class="overflow-hidden pt-6 pt-xxl-0 hero-enhanced" style="background: linear-gradient(120deg, #482099 65%, #1ba39c 100%); position: relative; z-index: 1; min-height: 420px;">
+  <div class="container-fluid">
+    <div class="d-flex main-hero-flex flex-row flex-md-row align-items-center justify-content-center hero-flex-enhanced" style="min-height: 400px;">
+      <!-- صورة مع خلفية فاتحة ولمسة جمالية -->
+      <div class="d-flex justify-content-center align-items-center order-1 order-md-1 hero-img-enhanced" style="flex: 0 0 48%; max-width: 320px; min-width: 140px;">
+        <div style="background: #f9f6d9; border-radius: 1.5rem; box-shadow: 0 8px 32px #48209922; display: flex; align-items: center; justify-content: center; padding: 0; width: 100%; max-width: 260px; position:relative;">
+          <img src="assets/images/bg/3by4/tutoring-vs-recorded.png" class="img-fluid rounded-3" alt="طالبة" style="width: 100%; height: auto; max-width: 260px; display: block;">
+          <span class="hero-circle hero-circle-1"></span>
+          <span class="hero-circle hero-circle-2"></span>
         </div>
-        <div class="stat-number">4,654</div>
       </div>
-      <div class="stat-label">آلاف الحصص تمّت<br>بكل احتراف</div>
-    </div>
-    <!-- بطاقة الطلاب -->
-    <div class="d-flex flex-column align-items-center">
-      <div class="stat-box" style="background: #f9f6d9;">
-        <div class="stat-icon" style="background:var(--brand-purple);">
-          <i class="bi bi-mortarboard"></i>
+      <!-- النصوص والشعار والأزرار والإحصائيات -->
+      <div class="d-flex flex-column justify-content-center align-items-end ps-3 order-2 order-md-2 hero-text-enhanced" style="flex: 1 1 48%; min-width: 140px;">
+        <h1 class="fs-2 fw-bold mb-2 text-end hero-title-enhanced" style="line-height:1.4; color: #fff;">
+          <span style="display:block;">كل دروسك ومدرسينك</span>
+          <span style="display:block; font-weight:500; font-size:1.7rem;">في مكان واحد</span>
+        </h1>
+        <p class="fs-6 mb-3 text-end hero-desc-enhanced" style="max-width: 250px; line-height:1.7; color: #e0e0e0;">
+          <span style="display:block;">حصص بالبيت ودروس أونلاين</span>
+          <span style="display:block; font-weight:500; font-size:1.1rem;">كل شي عندك جاهز</span>
+        </p>
+        <div class="d-flex flex-wrap gap-2 justify-content-end hero-cta-enhanced mb-3">
+          <a href="#" class="btn btn-lg hero-btn-primary" style="background-color: #ffb547; color: #482099; font-weight:700; min-width: 160px; border-radius: 2rem; box-shadow: 0 2px 12px #ffb54755;">
+            احجز حصتك
+          </a>
+          <a href="#" class="btn btn-lg hero-btn-secondary" style="background-color: #1ba39c; color: #fff; min-width: 160px; border-radius: 2rem; box-shadow: 0 2px 12px #1ba39c33;">
+            شاهد دروسك الآن
+          </a>
         </div>
-        <div class="stat-number">1,048</div>
-      </div>
-      <div class="stat-label">طالب وطالبة<br>وثقوا فينا</div>
-    </div>
-    <!-- بطاقة المدرسين -->
-    <div class="d-flex flex-column align-items-center">
-      <div class="stat-box" style="background: #f9f6d9;">
-        <div class="stat-icon" style="background:var(--brand-brown);">
-          <i class="bi bi-person-video3"></i>
+        <!-- إحصائيات مدمجة -->
+        <div class="stats-hero-wrapper w-100 d-flex justify-content-end">
+          <div class="stats-hero d-flex flex-row flex-nowrap gap-3">
+            <!-- بطاقة الحصص -->
+            <div class="stat-hero-box text-center">
+              <div class="stat-hero-icon" style="background: #1ba39c;"><i class="bi bi-book"></i></div>
+              <div class="stat-hero-number">4,654</div>
+              <div class="stat-hero-label">آلاف الحصص تمّت<br>بكل احتراف</div>
+            </div>
+            <!-- بطاقة الطلاب -->
+            <div class="stat-hero-box text-center">
+              <div class="stat-hero-icon" style="background: #482099;"><i class="bi bi-mortarboard"></i></div>
+              <div class="stat-hero-number">1,048</div>
+              <div class="stat-hero-label">طالب وطالبة<br>وثقوا فينا</div>
+            </div>
+            <!-- بطاقة المدرسين -->
+            <div class="stat-hero-box text-center">
+              <div class="stat-hero-icon" style="background: #8C6042;"><i class="bi bi-person-video3"></i></div>
+              <div class="stat-hero-number">968</div>
+              <div class="stat-hero-label">مدرس ومدرسة<br>جاهزين يخدمونك أين ما كنت</div>
+            </div>
+          </div>
         </div>
-        <div class="stat-number">968</div>
       </div>
-      <div class="stat-label">مدرس ومدرسة<br>جاهزين يخدمونك أين ما كنت</div>
     </div>
   </div>
 </section>
-
 <style>
 @media (max-width: 767.98px) {
   section.stats-section {
@@ -1134,334 +1287,9 @@ Feature START -->
 Feature END -->
 
 <!-- =======================
-Instructor grid START -->
-<section>
-	<div class="container">
-		<!-- Title -->
-		<div class="row mb-4">
-			<div class="col-md-8 text-center mx-auto">
-				<h2 class="fs-1">Featured Courses With Their Instructors</h2>
-				<p class="mb-0">Space is limited. Reserve your spot today!</p>
-			</div>
-		</div>
 
-		<!-- Instructor grid -->
-		<div class="row g-4">
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card p-2 shadow h-100">
-					<div class="card-image-scale rounded-3 position-relative">
-						<!-- Card Image -->
-						<img src="assets/images/instructor/01.jpg" class="card-img" alt="">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-2 z-index-1">
-							<div><span class="badge text-bg-dark"><i class="bi bi-star-fill text-warning me-2"></i>4.3</span></div>
-						</div>
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="workshop-detail.html" class="stretched-link">Build your brand & business</a></h5>
-						<h6 class="mb-0 fw-normal">With Dennis Barrett</h6>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card p-2 shadow h-100">
-					<div class="card-image-scale rounded-3 position-relative">
-						<!-- Card Image -->
-						<img src="assets/images/instructor/02.jpg" class="card-img" alt="">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-2 z-index-1">
-							<div><span class="badge text-bg-dark"><i class="bi bi-star-fill text-warning me-2"></i>4.5</span></div>
-						</div>
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="workshop-detail.html" class="stretched-link">Master in logo design</a></h5>
-						<h6 class="mb-0 fw-normal">With Jacqueline Miller</h6>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card p-2 shadow h-100">
-					<div class="card-image-scale rounded-3 position-relative">
-						<!-- Card Image -->
-						<img src="assets/images/instructor/03.jpg" class="card-img" alt="">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-2 z-index-1">
-							<div><span class="badge text-bg-dark"><i class="bi bi-star-fill text-warning me-2"></i>4.8</span></div>
-						</div>
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="workshop-detail.html" class="stretched-link">Create brand using vector illustration</a></h5>
-						<h6 class="mb-0 fw-normal">With Louis Ferguson</h6>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card p-2 shadow h-100">
-					<div class="card-image-scale rounded-3 position-relative">
-						<!-- Card Image -->
-						<img src="assets/images/instructor/06.jpg" class="card-img" alt="">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-2 z-index-1">
-							<div><span class="badge text-bg-dark"><i class="bi bi-star-fill text-warning me-2"></i>4.2</span></div>
-						</div>
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="workshop-detail.html" class="stretched-link">Develop your marketing skills style</a></h5>
-						<h6 class="mb-0 fw-normal">With Frances Guerrero</h6>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card p-2 shadow h-100">
-					<div class="card-image-scale rounded-3 position-relative">
-						<!-- Card Image -->
-						<img src="assets/images/instructor/07.jpg" class="card-img" alt="">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-2 z-index-1">
-							<div><span class="badge text-bg-dark"><i class="bi bi-star-fill text-warning me-2"></i>4.8</span></div>
-						</div>
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="workshop-detail.html" class="stretched-link">Build your own responsive website</a></h5>
-						<h6 class="mb-0 fw-normal">With Amanda Reed</h6>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card p-2 shadow h-100">
-					<div class="card-image-scale rounded-3 position-relative">
-						<!-- Card Image -->
-						<img src="assets/images/instructor/08.jpg" class="card-img" alt="">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-2 z-index-1">
-							<div><span class="badge text-bg-dark"><i class="bi bi-star-fill text-warning me-2"></i>4.7</span></div>
-						</div>
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="workshop-detail.html" class="stretched-link">Become a professional product photographer</a></h5>
-						<h6 class="mb-0 fw-normal">With Samuel Bishop</h6>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card p-2 shadow h-100">
-					<div class="card-image-scale rounded-3 position-relative">
-						<!-- Card Image -->
-						<img src="assets/images/instructor/10.jpg" class="card-img" alt="">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-2 z-index-1">
-							<div><span class="badge text-bg-dark"><i class="bi bi-star-fill text-warning me-2"></i>4.9</span></div>
-						</div>
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="workshop-detail.html" class="stretched-link">Developed your photo editing skills</a></h5>
-						<h6 class="mb-0 fw-normal">With Lori Stevens</h6>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card p-2 shadow h-100">
-					<div class="card-image-scale rounded-3 position-relative">
-						<!-- Card Image -->
-						<img src="assets/images/instructor/11.jpg" class="card-img" alt="">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-2 z-index-1">
-							<div><span class="badge text-bg-dark"><i class="bi bi-star-fill text-warning me-2"></i>4.0</span></div>
-						</div>
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="workshop-detail.html" class="stretched-link">Master logo design</a></h5>
-						<h6 class="mb-0 fw-normal">With Joan Wallace</h6>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-		</div>
-
-	</div>
-</section>
-<!-- =======================
-Instructor grid END -->
 
 <!-- =======================
-Action box START -->
-<section class="py-0">
-	<div class="container position-relative">
-		<div class="row">
-			<div class="col-12">
-				<div class="bg-light rounded-3 position-relative p-3 p-sm-5">
-					<div class="row g-4 align-items-center">
-						<div class="col-md-6">
-							<!-- Title -->
-							<h6 class="text-primary">Newsletter</h6>
-							<h2 class="mb-0">Subscribe Mail list!</h2>
-							<p class="mb-0">Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced.</p>
-						</div>
-
-						<!-- Form -->
-						<div class="col-md-6">
-							<form class="bg-body rounded-2 p-2">
-								<div class="input-group">
-									<input class="form-control border-0 me-1" type="email" placeholder="Enter your email">
-									<button type="button" class="btn btn-blue mb-0 rounded-2">Subscribe!</button>
-								</div>
-							</form>
-						</div>
-					</div> <!-- Row END -->
-				</div>
-			</div>
-		</div> <!-- Row END -->
-	</div>
-</section>
-<!-- =======================
-Action box END -->
-
-<!-- =======================
-Top Listed START -->
-
-<!-- =======================
-Top Listed END -->
-
-<!-- =======================
-Faq START -->
-<section class="pt-0 pt-md-5">
-	<div class="container">
-		<div class="row g-4">
-
-			<div class="col-lg-6 col-xl-5">
-				<!-- Title and button -->
-				<h2 class="fs-1">Frequently Asked Questions</h2>
-				<p class="mb-0">We are answering the most frequent questions. No worries if you do not find the exact one. You can find out more by searching or continuing by clicking the button below or directly <a href="#" class="text-decoration-underline">Contact our supports</a></p>
-			</div>
-
-			<div class="col-lg-6 ms-xl-auto">
-				<!-- Accordion START -->
-				<div class="accordion accordion-icon accordion-bg-light" id="accordionFaq">
-					<!-- Accordion item -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingOne">
-							<button class="accordion-button h6 rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								What is this theme layout for?
-							</button>
-						</h2>
-						<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
-							<div class="accordion-body">
-								Yet remarkably appearance gets him his projection. Diverted endeavor bed peculiar men the not desirous. Acuteness abilities ask can offending furnished fulfilled sex. Warrant fifteen exposed ye at mistake. Blush since so in noisy still built up an again. As young ye hopes no he place means. Partiality diminution gay yet entreaties admiration. In mention perhaps attempt pointed suppose. Unknown ye chamber of warrant of Norland arrived
-							</div>
-						</div>
-					</div>
-
-					<!-- Accordion item -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingTwo">
-							<button class="accordion-button h6 rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								How can we help?
-							</button>
-						</h2>
-						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFaq">
-							<div class="accordion-body">
-								What deal evil rent by real in. But her ready least set lived spite solid. September how men saw tolerably two behavior arranging. She offices for highest and replied one venture pasture. Applauded no discovery in newspaper allowance am northward. Frequently partiality possession resolution at or appearance unaffected me. Engaged its was the evident pleased husband. Ye goodness felicity do disposal dwelling no. First am plate jokes to began to cause a scale. Subjects he prospect elegance followed no overcame possible it on. Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage Mr be.
-							</div>
-						</div>
-					</div>
-
-					<!-- Accordion item -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingThree">
-							<button class="accordion-button h6 rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								How to edit my Profile?
-							</button>
-						</h2>
-						<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFaq">
-							<div class="accordion-body">
-								First am plate jokes to began to cause a scale. Subjects he prospect elegance followed no overcame possible it on. Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage Mr be.
-							</div>
-						</div>
-					</div>
-
-					<!-- Accordion item -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingFour">
-							<button class="accordion-button h6 rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-								How much should I offer the sellers? 
-							</button>
-						</h2>
-						<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFaq">
-							<div class="accordion-body">
-								Post no so what deal evil rent by real in. But her ready least set lived spite solid. September how men saw tolerably two behavior arranging. She offices for highest and replied one venture pasture. Applauded no discovery in newspaper allowance am northward. Frequently partiality possession resolution at or appearance unaffected me. Engaged its was the evident pleased husband. Ye goodness felicity do disposal dwelling no. First am plate jokes to began to cause a scale. Subjects he prospect elegance followed no overcame possible it on. Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage Mr be. Hold do at tore in park feet near my case. Invitation at understood occasional sentiments insipidity inhabiting in. Off melancholy alteration principles old. Is do speedily kindness properly oh. Respect article painted cottage he is offices parlors.
-							</div>
-						</div>
-					</div>
-
-					<!-- Accordion item -->
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="headingFive">
-							<button class="accordion-button h6 rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-								Additional Options and Services 
-							</button>
-						</h2>
-						<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFaq">
-							<div class="accordion-body">
-								But her ready least set lived spite solid. September how men saw tolerably two behavior arranging. She offices for highest and replied one venture pasture. Applauded no discovery in newspaper allowance am northward. Frequently partiality possession resolution at or appearance unaffected me. Engaged its was the evident pleased husband. Ye goodness felicity do disposal dwelling no. First am plate jokes to began to cause a scale. Subjects he prospect elegance followed no overcame possible it on. Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage Mr be. Hold do at tore in park feet near my case. Invitation at understood occasional sentiments insipidity inhabiting in. Off melancholy alteration principles old. Is do speedily kindness properly oh. Respect article painted cottage he is offices parlors.
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Accordion END -->
-			</div>
-
-		</div>
-	</div>
-</section>
-<!-- =======================
-Faq END -->
-
 
 
 
@@ -1472,7 +1300,7 @@ Faq END -->
 <!-- =======================
 Footer START -->
 
-<footer class="pt-5">
+<footer class="pt-5" style="margin-top: 2rem;">
 	<div class="container">
 		<!-- Row START -->
 		<div class="row g-4 justify-content-between">
