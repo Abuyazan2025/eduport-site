@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-	<title>حجز مدرس – الخطوة 1 | Private 4T</title>
+	<title>حجز عميل قديم – الخطوة 1 | Private 4T</title>
 
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
@@ -95,7 +95,6 @@
   --brand-beige: #f9f6d9;
   --brand-yellow: #ffb547;
 }
-/* دعم العربية في القوائم المنسدلة */
 select, option {
   direction: rtl !important;
   unicode-bidi: embed !important;
@@ -186,8 +185,54 @@ select, option {
   font-weight: 700;
 }
 .card-header, .brand-title-bar { text-align: right !important; }
+/* Progress Bar Styles */
+.progress-container {
+  width: 100%;
+  background: #eee;
+  border-radius: 1.5rem 1.5rem 0 0;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  height: 18px;
+  position: relative;
+}
+.progress-bar-custom {
+  background: var(--brand-teal);
+  height: 100%;
+  width: 50%;
+  transition: width 0.4s;
+}
+.progress-step-label {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: var(--brand-purple);
+  font-size: 1rem;
+  z-index: 2;
+}
+.welcome-message {
+  background: var(--brand-beige);
+  color: var(--brand-purple);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.welcome-message i {
+  color: var(--brand-yellow);
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
 @media (max-width: 991.98px) {
   .brand-title-bar { font-size: 1.1rem; padding: 0.75rem 1rem; }
+  .welcome-message { font-size: 1rem; padding: 0.75rem 1rem; }
 }
 </style>
 
@@ -238,28 +283,35 @@ select, option {
 
 <!-- **************** MAIN CONTENT START **************** -->
 <main class="container py-4">
-  <div class="brand-title-bar"><i class="bi bi-clipboard-check"></i>اختر تفاصيل حصتك الخاصة</div>
+  <!-- رسالة ترحيب شخصية -->
+  <div class="welcome-message" style="margin-bottom: 1rem;"><i class="bi bi-emoji-smile"></i>هلا ابويزن بيانات اخر حصة لك عدل اللى تحتاجه واضغط التالى</div>
+  <!-- Progress Bar -->
+  <div class="progress-container position-relative mb-3">
+    <div class="progress-bar-custom" id="progressBarStep"></div>
+    <span class="progress-step-label" id="progressStepLabel">١/٢</span>
+  </div>
+  <!-- حذف عنوان اختر تفاصيل حصتك الخاصة -->
   <div class="row justify-content-center">
     <!-- ===== بيانات الحجز (يمين) ===== -->
     <div class="col-lg-7 mb-4 mb-lg-0">
-      <div class="card card-custom p-4" style="margin-top: 0.5rem;">
+      <div class="card card-custom p-3" style="margin-top: 0.5rem;">
         <form id="bookingForm" autocomplete="off">
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="service-type" class="form-label">نوع الخدمة</label>
             <select class="form-select" id="service-type" name="service_type" required dir="rtl">
               <option value="">اختر نوع الخدمة</option>
-              <option value="home">حصة في المنزل</option>
+              <option value="home" selected>حصة في المنزل</option>
               <option value="center">حصة في المعهد</option>
               <option value="online">حصة أونلاين</option>
             </select>
           </div>
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="subject" class="form-label">المادة</label>
             <select class="form-select" id="subject" name="subject" required dir="rtl">
               <option value="">اختر المادة</option>
               <option value="arabic">اللغة العربية</option>
               <option value="english">اللغة الإنجليزية</option>
-              <option value="math">الرياضيات</option>
+              <option value="math" selected>الرياضيات</option>
               <option value="science">العلوم</option>
               <option value="physics">الفيزياء</option>
               <option value="chemistry">الكيمياء</option>
@@ -269,7 +321,7 @@ select, option {
               <option value="computer">الحاسوب</option>
             </select>
           </div>
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="grade" class="form-label">الصف</label>
             <select class="form-select" id="grade" name="grade" required dir="rtl">
               <option value="">اختر الصف</option>
@@ -282,28 +334,28 @@ select, option {
               <option value="7">الصف السابع</option>
               <option value="8">الصف الثامن</option>
               <option value="9">الصف التاسع</option>
-              <option value="10">الصف العاشر</option>
+              <option value="10" selected>الصف العاشر</option>
               <option value="11">الصف الحادي عشر</option>
               <option value="12">الصف الثاني عشر</option>
             </select>
           </div>
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="date" class="form-label">التاريخ</label>
-            <input type="date" class="form-control" id="date" name="date" required>
+            <input type="date" class="form-control" id="date" name="date" required value="2025-07-12">
+          </div>
+          <div class="mb-2">
+            <label for="time" class="form-label">وقت الحصة</label>
+            <input type="time" class="form-control" id="time" name="time" required value="00:32">
           </div>
           <div class="mb-3">
-            <label for="time" class="form-label">وقت الحصة</label>
-            <input type="time" class="form-control" id="time" name="time" required>
-          </div>
-          <div class="mb-4">
             <label for="duration" class="form-label">مدة الحصة</label>
             <select class="form-select" id="duration" name="duration" required dir="rtl">
               <option value="">اختر مدة الحصة</option>
               <option value="90">ساعة ونصف</option>
-              <option value="120">ساعتان</option>
+              <option value="120" selected>ساعتان</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-brand w-100">التالي</button>
+          <button type="submit" class="btn btn-brand w-100" style="margin-bottom:0;">التالي</button>
         </form>
       </div>
     </div>
@@ -322,8 +374,8 @@ select, option {
   </div>
   <!-- ===== Bottom Sheet (Mobile) ===== -->
   <div class="d-lg-none fixed-bottom bg-light border-top shadow-sm py-3 px-3 d-flex justify-content-between align-items-center" style="z-index:1050; border-radius: 1.25rem 1.25rem 0 0; box-shadow: 0 -4px 16px #1ba39c22; direction: rtl;">
-    <span class="fw-bold" id="m-price">— د.ك</span>
-    <button class="btn btn-brand px-4" type="submit" form="bookingForm">التالي</button>
+    <span class="fw-bold" id="m-price" style="background: var(--brand-yellow); color: var(--brand-purple); padding: 0.5rem 1.2rem; border-radius: 1.5rem; font-size: 1.1rem; margin-left: 0.5rem; margin-bottom:0;">— د.ك</span>
+    <button class="btn btn-brand px-4" type="submit" form="bookingForm" style="font-size:1.1rem;">التالي</button>
   </div>
 </main>
 <script>
@@ -378,6 +430,8 @@ if (window.Choices) {
   new Choices('#service-type', choicesOptions);
   new Choices('#duration', choicesOptions);
 }
+// Progress Bar step logic (للتطوير لاحقًا)
+// يمكن تحديث progressBarStep.style.width و progressStepLabel.textContent عند الانتقال للخطوة الثانية
 </script>
 
 <!-- =======================
@@ -485,4 +539,4 @@ Footer END -->
 <script src="assets/js/functions.js"></script>
 
 </body>
-</html>
+</html> 

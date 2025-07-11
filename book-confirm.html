@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <title>تأكيد الحجز | Private 4T</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style-rtl.css">
+  <style>
+    :root {
+      --brand-brown: #8c6042;
+      --brand-purple: #482099;
+      --brand-teal: #1ba39c;
+      --brand-beige: #f9f6d9;
+      --brand-yellow: #ffb547;
+      --brand-light: #f7f7fa;
+    }
+    body { background: #f7f7fa; }
+    .progress-container {
+      width: 100%;
+      background: #eee;
+      border-radius: 1.5rem 1.5rem 0 0;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      height: 18px;
+      position: relative;
+    }
+    .progress-bar-custom {
+      background: var(--brand-teal);
+      height: 100%;
+      width: 100%;
+      transition: width 0.4s;
+    }
+    .progress-step-label {
+      position: absolute;
+      right: 1rem;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      color: var(--brand-purple);
+      font-size: 1rem;
+      z-index: 2;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      color: var(--brand-purple);
+      font-size: 1.6rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+      vertical-align: middle;
+      padding: 0.2rem 0.7rem 0.2rem 0.2rem;
+      border-radius: 50%;
+    }
+    .back-btn:hover, .back-btn:focus {
+      color: var(--brand-brown);
+      background: #ede7fa;
+    }
+    /* باقي التنسيقات من book-summary.html */
+  </style>
+</head>
+<body>
+<!-- Header START -->
+<header class="navbar-light navbar-sticky">
+  <nav class="navbar navbar-expand-xl navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="navbar-brand-item" src="assets/images/bg/3by4/private-4t-logo.png" alt="logo" style="height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3 fw-bold text-white" style="background:#482099; border-radius:2rem;" href="#" id="bookMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              احجز حصتك
+            </a>
+            <ul class="dropdown-menu text-end" aria-labelledby="bookMenu">
+              <li><a class="dropdown-item" href="#">في البيت</a></li>
+              <li><a class="dropdown-item" href="#">في المعهد</a></li>
+              <li><a class="dropdown-item" href="#">أونلاين</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">تعرّف على مدرسينا</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">العروض والباقات</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">فيديوهات شرح</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">الرئيسية</a></li>
+          <li class="nav-item">
+            <a class="nav-link px-2" href="#" title="سلة المشتريات">
+              <i class="bi bi-cart3" style="font-size:1.3rem;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- Header END -->
+<main class="container py-4" style="max-width:430px;">
+  <!-- عنوان تسويقي مع لمسة جمالية -->
+  <div style="margin-bottom:1.2rem; padding:0.7rem 0.5rem 0.6rem 0.5rem; background:#fff; border-radius:1.2rem; box-shadow:0 2px 8px #48209911; border-bottom:3px solid #1ba39c; text-align:center;">
+    <h2 style="color:#482099; font-size:1.25rem; font-weight:800; margin:0; letter-spacing:0.5px;">كل شيء جاهز... بقي الدفع فقط!</h2>
+  </div>
+  <!-- زر رجوع وشارة الخطوة -->
+  <div class="d-flex align-items-center justify-content-between mb-2" style="gap:0.5rem;">
+    <button onclick="window.history.back()" style="display:flex;align-items:center;gap:0.3rem;background:#ede7fa;border:none;border-radius:1.2rem;padding:0.3rem 1.1rem 0.3rem 0.7rem;color:#482099;font-weight:600;font-size:1rem;box-shadow:0 1px 4px #48209911;cursor:pointer;">
+      <i class="bi bi-arrow-right" style="font-size:1.2rem;"></i>
+      <span style="font-size:1rem;">رجوع</span>
+    </button>
+  </div>
+  <!-- شريط الخطوة الأخيرة بشكل عصري -->
+  <div style="width:100%; margin-bottom:1rem;">
+    <div style="background:linear-gradient(90deg,#1ba39c 60%,#ffb547 100%); color:#fff; font-weight:700; border-radius:0.8rem; padding:0.4rem 0.7rem; font-size:1rem; box-shadow:0 1px 4px #1ba39c22; text-align:center; letter-spacing:0.5px; max-width:220px; margin:0 auto;">الخطوة الأخيرة ٢/٢</div>
+  </div>
+  <!-- Card ملخص الحجز -->
+  <section style="background:#f9f6d9; border-radius:1.2rem; box-shadow:0 2px 8px #48209911; padding:1.1rem 1rem 0.7rem 1rem; margin-bottom:1.1rem; position:relative;">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <div style="display:flex; align-items:center; gap:0.4rem;">
+        <i class="bi bi-clipboard-check" style="color:#482099; font-size:1.2rem;"></i>
+        <span style="font-size:1.08rem; font-weight:700; color:#482099;">ملخص الحجز</span>
+      </div>
+      <button onclick="window.history.back()" title="تعديل" style="background:#ffb547; border:none; border-radius:50%; width:1.7rem; height:1.7rem; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #ffb54733; cursor:pointer;"><i class="bi bi-pencil" style="color:#482099; font-size:1rem;"></i></button>
+    </div>
+    <ul style="list-style:none; padding:0; margin:0; font-size:0.98rem;">
+      <li style="margin-bottom:0.3rem; display:flex; align-items:center; border-bottom:1px solid #ede7fa; padding-bottom:0.2rem;">
+        <span style="color:#1ba39c; font-size:1.1rem; margin-left:0.4rem;">🏷️</span>
+        <span style="color:#482099; font-weight:500; min-width:90px;">نوع الخدمة:</span>
+        <span style="margin-right:0.4rem; white-space:nowrap;">حصة في المنزل</span>
+      </li>
+      <li style="margin-bottom:0.3rem; display:flex; align-items:center; border-bottom:1px solid #ede7fa; padding-bottom:0.2rem;">
+        <span style="color:#1ba39c; font-size:1.1rem; margin-left:0.4rem;">📚</span>
+        <span style="color:#482099; font-weight:500; min-width:90px;">الصف والمادة:</span>
+        <span style="margin-right:0.4rem; white-space:nowrap;">العاشر - رياضيات</span>
+      </li>
+      <li style="margin-bottom:0.3rem; display:flex; align-items:center; border-bottom:1px solid #ede7fa; padding-bottom:0.2rem;">
+        <span style="color:#1ba39c; font-size:1.1rem; margin-left:0.4rem;">🏠</span>
+        <span style="color:#482099; font-weight:500; min-width:90px;">العنوان:</span>
+        <span style="margin-right:0.4rem; white-space:nowrap;">العاصمة - الشويخ - ق5 - ش12 - 8م</span>
+      </li>
+      <li style="margin-bottom:0.3rem; display:flex; align-items:center; border-bottom:1px solid #ede7fa; padding-bottom:0.2rem;">
+        <span style="color:#1ba39c; font-size:1.1rem; margin-left:0.4rem;">⏰</span>
+        <span style="color:#482099; font-weight:500; min-width:90px;">الموعد:</span>
+        <span style="margin-right:0.4rem; white-space:nowrap;">2025-07-12 - 00:32 - ساعتان</span>
+      </li>
+      <li style="margin-bottom:0.3rem; display:flex; align-items:center; border-bottom:1px solid #ede7fa; padding-bottom:0.2rem;">
+        <span style="color:#ffb547; font-size:1.1rem; margin-left:0.4rem;">💰</span>
+        <span style="color:#482099; font-weight:500; min-width:90px;">السعر:</span>
+        <span style="margin-right:0.4rem; font-weight:700; color:#8c6042; white-space:nowrap;">20 د.ك</span>
+      </li>
+      <li style="margin-bottom:0; display:flex; align-items:center;">
+        <span style="color:#1ba39c; font-size:1.1rem; margin-left:0.4rem;">📞</span>
+        <span style="color:#482099; font-weight:500; min-width:90px;">رقم التواصل:</span>
+        <span style="margin-right:0.4rem; white-space:nowrap;">60000000</span>
+      </li>
+    </ul>
+  </section>
+  <!-- اختيار طريقة الدفع بتصميم مربعات عصري -->
+  <section style="background:#fff; border-radius:1rem; box-shadow:0 1px 4px #1ba39c22; padding:0.7rem 0.7rem 0.9rem 0.7rem; margin-bottom:0.7rem;">
+    <div style="font-size:1rem; color:#482099; font-weight:600; margin-bottom:0.7rem; display:flex; align-items:center; gap:0.4rem;"><i class="bi bi-credit-card" style="color:#1ba39c; font-size:1.1rem;"></i> طريقة الدفع</div>
+    <div class="d-flex justify-content-center gap-2 mb-3" style="gap:0.7rem;">
+      <div class="payment-option selected" data-method="knet" tabindex="0" style="background:#f9f6d9; border:2px solid #1ba39c; border-radius:0.7rem; width:80px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 2px 8px #1ba39c22; cursor:pointer; transition:all 0.2s;">
+        <img src="assets/images/payment/knet.png" alt="Knet" style="height:28px; margin-bottom:0.2rem;">
+        <span style="font-size:1rem; color:#482099; font-weight:700;">Knet</span>
+      </div>
+      <div class="payment-option" data-method="visa" tabindex="0" style="background:#f9f6d9; border:2px solid #eee; border-radius:0.7rem; width:80px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 2px 8px #eee2; cursor:pointer; transition:all 0.2s;">
+        <img src="assets/images/payment/visa.png" alt="Visa" style="height:28px; margin-bottom:0.2rem;">
+        <span style="font-size:1rem; color:#482099; font-weight:700;">Visa</span>
+      </div>
+      <div class="payment-option" data-method="mastercard" tabindex="0" style="background:#f9f6d9; border:2px solid #eee; border-radius:0.7rem; width:80px; height:70px; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 2px 8px #eee2; cursor:pointer; transition:all 0.2s;">
+        <img src="assets/images/payment/mastercard.png" alt="Mastercard" style="height:28px; margin-bottom:0.2rem;">
+        <span style="font-size:1rem; color:#482099; font-weight:700;">Mastercard</span>
+      </div>
+    </div>
+    <form id="userForm" autocomplete="off">
+      <button type="submit" class="btn w-100" style="background:#8c6042; color:#fff; border-radius:1.5rem; font-weight:700; font-size:1.08rem; box-shadow:0 2px 8px #8c604233; padding:0.7rem 0; margin-bottom:0.2rem; transition:background 0.2s;">ادفع الآن</button>
+      <div class="pay-note" style="color:#888; font-size:0.93rem; text-align:center;">سيتم تحويلك لبوابة الدفع لإتمام العملية بأمان.</div>
+      <input type="hidden" name="payment_method" id="payment_method" value="knet">
+    </form>
+  </section>
+</main>
+<script>
+// تفعيل اختيار طريقة الدفع
+const paymentOptions = document.querySelectorAll('.payment-option');
+const paymentInput = document.getElementById('payment_method');
+paymentOptions.forEach(opt => {
+  opt.addEventListener('click', function() {
+    paymentOptions.forEach(o => {
+      o.classList.remove('selected');
+      o.style.border = '2px solid #eee';
+    });
+    this.classList.add('selected');
+    this.style.border = '2px solid #1ba39c';
+    paymentInput.value = this.getAttribute('data-method');
+  });
+});
+</script>
+</body>
+</html> 

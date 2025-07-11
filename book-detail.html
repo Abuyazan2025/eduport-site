@@ -169,14 +169,6 @@
       <div class="form-section">
         <form id="detailsForm" autocomplete="off">
           <div class="mb-3">
-            <label for="date" class="form-label">التاريخ</label>
-            <input type="date" class="form-control" id="date" name="date" required value="2025-07-11">
-          </div>
-          <div class="mb-3">
-            <label for="time" class="form-label">وقت الحصة</label>
-            <input type="time" class="form-control" id="time" name="time" required value="10:30">
-          </div>
-          <div class="mb-3">
             <label for="governorate" class="form-label">المحافظة</label>
             <select class="form-select" id="governorate" name="governorate" required>
               <option value="">اختر المحافظة</option>
@@ -200,6 +192,18 @@
               <option value="الصليبية">الصليبية</option>
               <!-- أضف المزيد حسب الحاجة -->
             </select>
+          </div>
+          <div class="mb-3">
+            <label for="block" class="form-label">رقم القطعة</label>
+            <input type="text" class="form-control" id="block" name="block" required placeholder="أدخل رقم القطعة">
+          </div>
+          <div class="mb-3">
+            <label for="street" class="form-label">رقم الشارع</label>
+            <input type="text" class="form-control" id="street" name="street" required placeholder="أدخل رقم الشارع">
+          </div>
+          <div class="mb-3">
+            <label for="house" class="form-label">رقم المنزل</label>
+            <input type="text" class="form-control" id="house" name="house" required placeholder="أدخل رقم المنزل">
           </div>
           <button type="submit" class="btn btn-brand w-100">التالي</button>
         </form>

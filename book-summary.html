@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <title>ملخص الحجز | Private 4T</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style-rtl.css">
+  <style>
+    :root {
+      --brand-brown: #8c6042;
+      --brand-purple: #482099;
+      --brand-teal: #1ba39c;
+      --brand-beige: #f9f6d9;
+      --brand-yellow: #ffb547;
+      --brand-light: #f7f7fa;
+    }
+    body { background: #f7f7fa; }
+    .brand-title-bar {
+      background: var(--brand-purple);
+      color: #fff;
+      border-radius: 1.5rem 1.5rem 0 0;
+      box-shadow: 0 4px 16px #48209922;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      text-align: right;
+      padding: 1rem 2rem 1rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .summary-box {
+      background: #fff;
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 16px rgba(72,32,153,0.08);
+      padding: 1.1rem 0.7rem 0.7rem 0.7rem;
+      margin-bottom: 1.2rem;
+      min-width: 220px;
+    }
+    .summary-title {
+      color: var(--brand-purple);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      font-size: 1rem;
+      margin-bottom: 0.7rem;
+      color: #333;
+      gap: 1rem;
+    }
+    .summary-row .label {
+      color: #888;
+      min-width: 90px;
+    }
+    .summary-row .value {
+      font-weight: 500;
+    }
+    .summary-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--brand-brown);
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+    .user-form-box {
+      background: #fffbe6;
+      border-radius: 1.25rem;
+      box-shadow: 0 2px 8px #ffb54722;
+      padding: 2rem 2rem 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .form-label {
+      color: var(--brand-purple);
+      font-weight: 500;
+      text-align: right;
+      display: block;
+    }
+    .form-control, .form-select {
+      border-radius: 1rem;
+      border: 1px solid #e0e0e0;
+      box-shadow: none;
+      text-align: right;
+      direction: rtl;
+      background: #fff;
+    }
+    .payment-methods {
+      display: flex;
+      gap: 0.3rem;
+      margin: 0.7rem 0 0.7rem 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+    }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: #f7f7fa;
+      border: 2px solid #e0e0e0;
+      border-radius: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      cursor: pointer;
+      transition: border 0.2s, background 0.2s;
+      font-weight: 500;
+      min-width: 60px;
+      font-size: 0.93em;
+      box-shadow: 0 1px 4px #0001;
+    }
+    .payment-option.selected, .payment-option:hover {
+      border: 2px solid var(--brand-purple);
+      background: #ede7fa;
+      box-shadow: 0 2px 8px #48209922;
+    }
+    .payment-option img {
+      height: 18px;
+      margin-left: 0.2em;
+    }
+    .btn-brand {
+      background: var(--brand-brown);
+      color: #fff;
+      border-radius: 2rem;
+      font-weight: 700;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px #8c604233;
+      font-size: 1.15rem;
+      padding: 0.7rem 0;
+    }
+    .btn-brand:hover, .btn-brand:focus {
+      background: var(--brand-yellow);
+      color: var(--brand-purple);
+    }
+    .pay-note {
+      color: #888;
+      font-size: 0.95rem;
+      margin-top: 0.7rem;
+      text-align: center;
+    }
+    @media (max-width: 991.98px) {
+      .brand-title-bar { font-size: 1.1rem; padding: 0.75rem 1rem; }
+      .summary-box, .user-form-box { padding: 1.2rem 0.7rem; }
+      .payment-methods { gap: 0.7rem; }
+    }
+    .edit-btn {
+      background: none;
+      border: none;
+      color: var(--brand-purple);
+      margin-right: 0.3rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 0 0.2rem;
+      transition: color 0.2s;
+      vertical-align: middle;
+    }
+    .edit-btn:focus, .edit-btn:hover {
+      color: var(--brand-brown);
+    }
+    .summary-row input, .summary-row select {
+      font-size: 1rem;
+      border-radius: 0.7rem;
+      border: 1px solid #e0e0e0;
+      padding: 0.2rem 0.7rem;
+      margin-right: 0.2rem;
+      min-width: 90px;
+      max-width: 140px;
+      display: inline-block;
+      direction: rtl;
+      text-align: right;
+    }
+    .compact-summary {
+      padding: 0.5rem 0.3rem 0.3rem 0.3rem !important;
+      font-size: 0.95rem;
+    }
+    .summary-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .summary-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.3rem 0.7rem;
+      font-size: 0.97em;
+      margin-bottom: 0.1rem;
+    }
+    .summary-row .label {
+      min-width: unset;
+      color: #888;
+      font-size: 0.97em;
+    }
+    .summary-row .value {
+      font-size: 1em;
+      font-weight: 500;
+    }
+    .edit-btn {
+      font-size: 0.95em;
+      margin-right: 0.3rem;
+      margin-left: 0.1rem;
+      padding: 0 0.1rem;
+    }
+    @media (max-width: 991.98px) {
+      .summary-box.compact-summary {
+        padding: 0.3rem 0.1rem 0.1rem 0.1rem !important;
+        font-size: 0.91rem;
+      }
+      .summary-row {
+        font-size: 0.91em;
+        gap: 0.2rem 0.3rem;
+      }
+      .edit-btn {
+        font-size: 0.9em;
+      }
+    }
+    .summary-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .summary-row {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.97em;
+      margin-bottom: 0.1rem;
+      justify-content: flex-start;
+    }
+    .summary-row .label {
+      min-width: 80px;
+      color: #888;
+      font-size: 0.97em;
+    }
+    .summary-row .value, .summary-row .editable-group {
+      font-size: 1em;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .summary-row .label {
+      color: #bbb;
+      font-size: 0.97em;
+      font-weight: 400;
+    }
+    .summary-row .value, .summary-row .editable-group {
+      color: #222;
+      font-weight: 600;
+    }
+    .edit-btn {
+      font-size: 0.95em;
+      margin-right: 0.3rem;
+      margin-left: 0.1rem;
+      padding: 0 0.1rem;
+    }
+    .summary-box.compact-summary {
+      margin-bottom: 0.7rem;
+    }
+    .user-form-box {
+      margin-top: 0.2rem;
+    }
+    .address-label {
+      color: #aaa;
+      font-size: 0.93em;
+      margin-left: 0.1em;
+      margin-right: 0.2em;
+    }
+    .edit-btn {
+      font-size: 1em;
+      margin-right: auto;
+      margin-left: 0.2rem;
+      background: none;
+      border: none;
+      color: var(--brand-purple);
+      cursor: pointer;
+      padding: 0 0.2rem;
+      transition: color 0.2s;
+      vertical-align: middle;
+    }
+    .edit-btn:focus, .edit-btn:hover {
+      color: var(--brand-brown);
+    }
+    .summary-row input, .summary-row select {
+      font-size: 1em;
+      border-radius: 0.7rem;
+      border: 1px solid #e0e0e0;
+      padding: 0.2rem 0.7rem;
+      margin-right: 0.2rem;
+      min-width: 70px;
+      max-width: 110px;
+      display: inline-block;
+      direction: rtl;
+      text-align: right;
+    }
+    .beautiful-summary {
+      background: linear-gradient(135deg, #f9f6ff 80%, #ede7fa 100%);
+      border-radius: 1.7rem;
+      box-shadow: 0 4px 16px #48209911;
+      padding: 1.2rem 1.1rem 0.9rem 1.1rem !important;
+      margin-bottom: 0.7rem;
+      border: 1.5px solid #ede7fa;
+      min-width: 0;
+    }
+    .summary-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5em;
+      direction: rtl;
+    }
+    .summary-title {
+      font-size: 1.13rem;
+      font-weight: 700;
+      color: var(--brand-purple);
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+    }
+    .edit-all-btn {
+      background: none;
+      border: none;
+      color: var(--brand-purple);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1em;
+      box-shadow: none;
+      transition: background 0.2s, color 0.2s;
+      margin: 0;
+      align-self: auto;
+      min-width: 2em;
+      min-height: 2em;
+    }
+    .edit-all-btn:focus, .edit-all-btn:hover {
+      background: var(--brand-purple);
+      color: #fff;
+    }
+    .edit-icon-circle {
+      background: #ede7fa;
+      border-radius: 50%;
+      width: 1.7em;
+      height: 1.7em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1em;
+      color: var(--brand-purple);
+      box-shadow: 0 1px 4px #48209911;
+    }
+    .edit-all-btn:focus .edit-icon-circle, .edit-all-btn:hover .edit-icon-circle {
+      background: #fff;
+      color: var(--brand-purple);
+    }
+    .edit-text {
+      font-size: 0.98em;
+      font-weight: 500;
+      color: inherit;
+      margin-right: 0.2em;
+    }
+    .summary-brief-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .brief-row {
+      display: flex;
+      align-items: center;
+      font-size: 1.04em;
+      color: #333;
+      margin-bottom: 0.1rem;
+      gap: 0.5em;
+      line-height: 1.7;
+    }
+    .brief-ico {
+      font-size: 1.1em;
+      margin-left: 0.2em;
+      color: #b6a9d6;
+      opacity: 0.85;
+    }
+    .brief-label {
+      color: #b6a9d6;
+      font-size: 0.97em;
+      min-width: 90px;
+      font-weight: 400;
+    }
+    .brief-value {
+      color: #482099;
+      font-weight: 600;
+      font-size: 1.04em;
+    }
+    .edit-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4em;
+      margin-bottom: 0.3em;
+    }
+    .edit-label {
+      color: #bbb;
+      font-size: 0.97em;
+      min-width: 55px;
+      font-weight: 400;
+      margin-bottom: 0.1em;
+    }
+    #editSummaryForm {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5em 1em;
+      background: #f9f6ff;
+      border-radius: 1.2em;
+      padding: 0.7em 0.5em 0.5em 0.5em;
+      margin-bottom: 0.2em;
+    }
+    #editSummaryForm .edit-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2em;
+      margin-bottom: 0.1em;
+    }
+    #editSummaryForm .edit-label {
+      color: #bbb;
+      font-size: 0.97em;
+      min-width: 55px;
+      font-weight: 400;
+      margin-bottom: 0.1em;
+    }
+    #editSummaryForm select, #editSummaryForm input {
+      font-size: 0.98em;
+      border-radius: 0.7rem;
+      border: 1px solid #e0e0e0;
+      padding: 0.2rem 0.7rem;
+      min-width: 60px;
+      max-width: 100%;
+      display: inline-block;
+      direction: rtl;
+      text-align: right;
+    }
+    #editSummaryForm .btn {
+      min-width: 70px;
+      margin: 0.2em 0.2em 0 0;
+    }
+    @media (max-width: 600px) {
+      #editSummaryForm {
+        grid-template-columns: 1fr;
+        gap: 0.4em 0;
+      }
+      .summary-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3em;
+      }
+      .edit-all-btn {
+        align-self: flex-end;
+        margin-top: 0.3em;
+        font-size: 0.95em;
+        min-width: 1.7em;
+        min-height: 1.7em;
+        padding: 0.1em 0.2em;
+      }
+    }
+    .summary-box.compact-summary.beautiful-summary {
+      position: relative;
+      padding-bottom: 3.2em !important;
+    }
+    .edit-all-btn {
+      position: absolute;
+      left: 1.2em;
+      bottom: 1em;
+      z-index: 2;
+      font-size: 1.1em;
+      min-width: 2em;
+      min-height: 2em;
+      padding: 0.2em 0.5em;
+      margin: 0;
+      align-self: auto;
+    }
+    @media (max-width: 600px) {
+      .edit-all-btn {
+        font-size: 0.95em;
+        min-width: 1.7em;
+        min-height: 1.7em;
+        padding: 0.1em 0.2em;
+        left: 0.7em;
+        bottom: 0.7em;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Header START -->
+<header class="navbar-light navbar-sticky">
+  <nav class="navbar navbar-expand-xl navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="navbar-brand-item" src="assets/images/bg/3by4/private-4t-logo.png" alt="logo" style="height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3 fw-bold text-white" style="background:#482099; border-radius:2rem;" href="#" id="bookMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              احجز حصتك
+            </a>
+            <ul class="dropdown-menu text-end" aria-labelledby="bookMenu">
+              <li><a class="dropdown-item" href="#">في البيت</a></li>
+              <li><a class="dropdown-item" href="#">في المعهد</a></li>
+              <li><a class="dropdown-item" href="#">أونلاين</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">تعرّف على مدرسينا</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">العروض والباقات</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">فيديوهات شرح</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#">الرئيسية</a></li>
+          <li class="nav-item">
+            <a class="nav-link px-2" href="#" title="سلة المشتريات">
+              <i class="bi bi-cart3" style="font-size:1.3rem;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- Header END -->
+<main class="container py-4">
+  <div class="brand-title-bar"><i class="bi bi-clipboard-check"></i>ملخص الحجز</div>
+  <div class="row justify-content-center">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      <div class="summary-box compact-summary beautiful-summary">
+        <div class="summary-header-row">
+          <span class="summary-title"><i class="bi bi-clipboard-check"></i> ملخص الحجز</span>
+        </div>
+        <div class="summary-brief-list" id="summaryBrief">
+          <div class="brief-row"><span class="brief-ico">🏷️</span><span class="brief-label">نوع الخدمة:</span> <span class="brief-value" id="brief-service">حصة في المنزل</span></div>
+          <div class="brief-row"><span class="brief-ico">📚</span><span class="brief-label">الصف والمادة:</span> <span class="brief-value" id="brief-grade-subject">العاشر - رياضيات</span></div>
+          <div class="brief-row"><span class="brief-ico">🏠</span><span class="brief-label">العنوان:</span> <span class="brief-value" id="brief-address">العاصمة - الشويخ - ق5 - ش12 - 8م</span></div>
+          <div class="brief-row"><span class="brief-ico">⏰</span><span class="brief-label">الموعد:</span> <span class="brief-value" id="brief-datetime">2024-07-11 - 10:30 صباحًا - ساعة ونصف</span></div>
+          <div class="brief-row"><span class="brief-ico">💰</span><span class="brief-label">السعر:</span> <span class="brief-value" id="brief-price">15 د.ك</span></div>
+        </div>
+        <button class="edit-btn edit-all-btn" type="button" aria-label="تعديل الكل">
+          <span class="edit-icon-circle"><i class="bi bi-pencil"></i></span>
+          <span class="edit-text">تعديل</span>
+        </button>
+        <form id="editSummaryForm" style="display:none; margin-top:0.7rem;">
+          <div class="edit-row">
+            <label class="edit-label">نوع الخدمة</label>
+            <select class="form-control form-control-sm" id="edit-service">
+              <option>حصة في المنزل</option>
+              <option>حصة في المعهد</option>
+              <option>حصة أونلاين</option>
+            </select>
+          </div>
+          <div class="edit-row">
+            <label class="edit-label">الصف</label>
+            <select class="form-control form-control-sm" id="edit-grade">
+              <option>العاشر</option>
+              <option>الحادي عشر</option>
+              <option>الثاني عشر</option>
+            </select>
+            <label class="edit-label">المادة</label>
+            <select class="form-control form-control-sm" id="edit-subject">
+              <option>رياضيات</option>
+              <option>اللغة الإنجليزية</option>
+              <option>اللغة العربية</option>
+              <option>العلوم</option>
+              <option>الفيزياء</option>
+              <option>الكيمياء</option>
+              <option>الأحياء</option>
+              <option>التربية الإسلامية</option>
+              <option>الاجتماعيات</option>
+              <option>الحاسوب</option>
+            </select>
+          </div>
+          <div class="edit-row">
+            <label class="edit-label">المحافظة</label>
+            <select class="form-control form-control-sm" id="edit-governorate">
+              <option>العاصمة</option>
+              <option>حولي</option>
+              <option>الفروانية</option>
+              <option>الأحمدي</option>
+              <option>مبارك الكبير</option>
+              <option>الجهراء</option>
+            </select>
+            <label class="edit-label">المنطقة</label>
+            <input type="text" class="form-control form-control-sm" id="edit-area" value="الشويخ">
+            <label class="edit-label">قطعة</label>
+            <input type="text" class="form-control form-control-sm" id="edit-block" value="5" style="width:2.5em;">
+            <label class="edit-label">شارع</label>
+            <input type="text" class="form-control form-control-sm" id="edit-street" value="12" style="width:2.5em;">
+            <label class="edit-label">منزل</label>
+            <input type="text" class="form-control form-control-sm" id="edit-house" value="8" style="width:2.5em;">
+          </div>
+          <div class="edit-row">
+            <label class="edit-label">التاريخ</label>
+            <input type="date" class="form-control form-control-sm" id="edit-date" value="2024-07-11">
+            <label class="edit-label">الساعة</label>
+            <input type="time" class="form-control form-control-sm" id="edit-time" value="10:30">
+            <label class="edit-label">مدة الحصة</label>
+            <select class="form-control form-control-sm" id="edit-duration">
+              <option>ساعة ونصف</option>
+              <option>ساعتان</option>
+            </select>
+          </div>
+          <div class="edit-row" style="text-align:center; margin-top:0.5rem;">
+            <button type="button" class="btn btn-sm btn-brand" id="saveEditSummary">حفظ</button>
+            <button type="button" class="btn btn-sm btn-light" id="cancelEditSummary">إلغاء</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="user-form-box">
+        <form id="userForm" autocomplete="off">
+          <div class="mb-3">
+            <label for="fullname" class="form-label">الاسم الكامل</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" required placeholder="أدخل اسمك الكامل">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">البريد الإلكتروني</label>
+            <input type="email" class="form-control" id="email" name="email" required placeholder="example@email.com">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">طريقة الدفع</label>
+            <div class="payment-methods">
+              <div class="payment-option selected" data-method="knet" tabindex="0"><img src="assets/images/payment/knet.png" alt="Knet" style="height:28px;"> Knet</div>
+              <div class="payment-option" data-method="visa" tabindex="0"><img src="assets/images/payment/visa.png" alt="Visa" style="height:28px;"> Visa</div>
+              <div class="payment-option" data-method="mastercard" tabindex="0"><img src="assets/images/payment/mastercard.png" alt="Mastercard" style="height:28px;"> Mastercard</div>
+              <!-- أضف المزيد حسب الحاجة -->
+            </div>
+            <input type="hidden" name="payment_method" id="payment_method" value="knet">
+          </div>
+          <button type="submit" class="btn btn-brand w-100">ادفع الآن</button>
+          <div class="pay-note">سيتم تحويلك لبوابة الدفع لإتمام العملية بأمان.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/choices/js/choices.min.js"></script>
+<script src="assets/js/functions.js"></script>
+<script>
+// تفعيل اختيار طريقة الدفع
+const paymentOptions = document.querySelectorAll('.payment-option');
+const paymentInput = document.getElementById('payment_method');
+paymentOptions.forEach(opt => {
+  opt.addEventListener('click', function() {
+    paymentOptions.forEach(o => o.classList.remove('selected'));
+    this.classList.add('selected');
+    paymentInput.value = this.getAttribute('data-method');
+  });
+});
+// منطق التعديل الجماعي فقط (إزالة التعديل الفردي)
+const editBtn = document.querySelector('.edit-all-btn');
+const summaryBrief = document.getElementById('summaryBrief');
+const editForm = document.getElementById('editSummaryForm');
+const saveEditBtn = document.getElementById('saveEditSummary');
+const cancelEditBtn = document.getElementById('cancelEditSummary');
+if (editBtn && summaryBrief && editForm && saveEditBtn && cancelEditBtn) {
+  editBtn.addEventListener('click', function() {
+    // مزامنة القيم من الملخص إلى النموذج
+    // نوع الخدمة
+    document.getElementById('edit-service').value = document.getElementById('brief-service').textContent.trim();
+    // الصف والمادة
+    const gradeSubject = document.getElementById('brief-grade-subject').textContent.trim().split(' - ');
+    document.getElementById('edit-grade').value = gradeSubject[0] || '';
+    document.getElementById('edit-subject').value = gradeSubject[1] || '';
+    // العنوان
+    const address = document.getElementById('brief-address').textContent.trim().split(' - ');
+    document.getElementById('edit-governorate').value = address[0] || '';
+    document.getElementById('edit-area').value = address[1] || '';
+    // قطعة، شارع، منزل (مثال: ق5 - ش12 - 8م)
+    let block = '', street = '', house = '';
+    if(address[2]) {
+      const blockMatch = address[2].match(/ق(\d+)/);
+      if(blockMatch) block = blockMatch[1];
+    }
+    if(address[3]) {
+      const streetMatch = address[3].match(/ش(\d+)/);
+      if(streetMatch) street = streetMatch[1];
+    }
+    if(address[4]) {
+      const houseMatch = address[4].match(/(\d+)م/);
+      if(houseMatch) house = houseMatch[1];
+    }
+    document.getElementById('edit-block').value = block;
+    document.getElementById('edit-street').value = street;
+    document.getElementById('edit-house').value = house;
+    // التاريخ، الوقت، المدة
+    const datetime = document.getElementById('brief-datetime').textContent.trim().split(' - ');
+    document.getElementById('edit-date').value = datetime[0] || '';
+    document.getElementById('edit-time').value = datetime[1] ? datetime[1].replace(/[^0-9:]/g, '') : '';
+    document.getElementById('edit-duration').value = datetime[2] || '';
+    summaryBrief.style.display = 'none';
+    editForm.style.display = 'grid';
+  });
+  cancelEditBtn.addEventListener('click', function() {
+    editForm.style.display = 'none';
+    summaryBrief.style.display = 'flex';
+  });
+  saveEditBtn.addEventListener('click', function() {
+    // تحديث القيم في الملخص المختصر
+    const service = document.getElementById('edit-service').value;
+    const grade = document.getElementById('edit-grade').value;
+    const subject = document.getElementById('edit-subject').value;
+    const governorate = document.getElementById('edit-governorate').value;
+    const area = document.getElementById('edit-area').value;
+    const block = document.getElementById('edit-block').value;
+    const street = document.getElementById('edit-street').value;
+    const house = document.getElementById('edit-house').value;
+    const date = document.getElementById('edit-date').value;
+    const time = document.getElementById('edit-time').value;
+    const duration = document.getElementById('edit-duration').value;
+    document.getElementById('brief-service').textContent = service;
+    document.getElementById('brief-grade-subject').textContent = grade + ' - ' + subject;
+    document.getElementById('brief-address').textContent = governorate + ' - ' + area + ' - ق' + block + ' - ش' + street + ' - ' + house + 'م';
+    document.getElementById('brief-datetime').textContent = date + ' - ' + time + ' - ' + duration;
+    editForm.style.display = 'none';
+    summaryBrief.style.display = 'flex';
+  });
+}
+</script>
+</body>
+</html> 
