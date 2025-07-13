@@ -28,6 +28,29 @@
     .lesson-title { flex-grow: 1; }
     .right-sidebar { background: #fff; border: 2px solid var(--brand-purple); border-radius: 1.2rem; box-shadow: 0 2px 12px rgba(72,32,153,0.07); }
     .sidebar-header { background: linear-gradient(90deg, var(--brand-purple) 80%, var(--brand-teal) 100%); color: #fff; border-radius: 1.2rem 1.2rem 0 0; padding: 1rem 1rem .7rem 1rem; margin: -1rem -1rem 1rem -1rem; box-shadow: 0 2px 8px rgba(72,32,153,0.10); text-align: right; font-size: 1.2rem; font-weight: 900; letter-spacing: 1px; }
+    @media (max-width: 991.98px) {
+      .course-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0.5rem;
+        border-radius: 1.2rem 1.2rem 0 0;
+        scrollbar-width: thin;
+        scrollbar-color: var(--brand-teal) #f6f8fb;
+      }
+      .course-tabs .nav-item {
+        flex: 0 0 auto;
+        min-width: 90px;
+        margin-bottom: 0;
+        display: block;
+      }
+      .course-tabs .nav-link {
+        font-size: 0.92rem;
+        padding: 0.35rem 0.9rem;
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
     @media(min-width:992px){
       .main-wrapper { display: flex; gap: 2rem; }
       .right-sidebar { width: 320px; flex: 0 0 320px; position: sticky; top: 0; height: calc(100vh - 2rem); overflow: auto; }
